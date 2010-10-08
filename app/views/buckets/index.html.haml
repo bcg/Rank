@@ -1,0 +1,6 @@
+%h1 Buckets
+
+- for bucket in @buckets
+  %div.bucket{ :id => "bucket_#{bucket.id}" }
+    %p.bucket-name= link_to bucket.name, bucket_url(bucket)
+    = simple_format bucket.description, :class => "bucket-description"

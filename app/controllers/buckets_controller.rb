@@ -1,5 +1,9 @@
 class BucketsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, :only => [ :new, :create, :join ]
+
+  def index
+    @buckets = Bucket.find(:all)
+  end
 
   def show
     @bucket = Bucket.find(params[:id])
@@ -19,6 +23,22 @@ class BucketsController < ApplicationController
     else
       render :action => :new
     end
+  end
+  
+  def join
+    @bucket = Bucket.find(params[:id])
+    unless current_user.member_of?(@bucket)
+      permission = BucketPermission.new
+      permission.user = current_user
+      permission.bucket = @bucket
+      if permission.save
+        flash[:notice] = "You joined the #{@bucket.name} bucket."
+        redirect_to @bucket
+      else
+        flash[:error] = "Sorry, you cannot join the bucket at this time."
+      end
+    end
+    redirect_to @bucket
   end
   
 end

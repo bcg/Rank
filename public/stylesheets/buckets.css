@@ -1,3 +1,37 @@
+body.buckets-index h1 {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 18px;
+  color: #555555;
+  font-weight: bold; }
+body.buckets-index .bucket p.bucket-name {
+  font-size: 24px;
+  line-height: 36px;
+  color: #555555; }
+  body.buckets-index .bucket p.bucket-name a:link, body.buckets-index .bucket p.bucket-name a:visited, body.buckets-index .bucket p.bucket-name a:active {
+    color: #555555;
+    text-decoration: none; }
+  body.buckets-index .bucket p.bucket-name a:hover {
+    text-decoration: underline; }
+body.buckets-index .bucket p.bucket-byline span.bucket, body.buckets-index .bucket p.bucket-byline span.author {
+  margin: 0px 5px;
+  color: #555555; }
+  body.buckets-index .bucket p.bucket-byline span.bucket a:link, body.buckets-index .bucket p.bucket-byline span.bucket a:visited, body.buckets-index .bucket p.bucket-byline span.bucket a:active, body.buckets-index .bucket p.bucket-byline span.author a:link, body.buckets-index .bucket p.bucket-byline span.author a:visited, body.buckets-index .bucket p.bucket-byline span.author a:active {
+    color: #555555;
+    text-decoration: none; }
+  body.buckets-index .bucket p.bucket-byline span.bucket a:hover, body.buckets-index .bucket p.bucket-byline span.author a:hover {
+    text-decoration: underline; }
+body.buckets-index .bucket p.bucket-byline span.spacer {
+  margin: 0px 5px;
+  color: #cccccc; }
+body.buckets-index .bucket p.bucket-description {
+  font-size: 14px;
+  color: #555555;
+  line-height: 18px;
+  margin-bottom: 18px; }
+body.buckets-index .bucket p.bucket-description:last-child {
+  margin-bottom: 0px; }
+
 body.buckets-show h1 {
   font-size: 24px;
   line-height: 36px;

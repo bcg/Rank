@@ -10,12 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101008060134) do
+ActiveRecord::Schema.define(:version => 20101008143516) do
+
+  create_table "bucket_permissions", :force => true do |t|
+    t.integer  "bucket_id"
+    t.integer  "user_id"
+    t.boolean  "admin"
+    t.boolean  "moderator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "buckets", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "owner"
+    t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

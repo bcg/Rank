@@ -14,6 +14,9 @@ Orgg3::Application.routes.draw do
   end
 
   resources :buckets do 
+    member do
+      post 'join'
+    end
     resources :posts
   end
 

@@ -3,7 +3,7 @@ class CreateBuckets < ActiveRecord::Migration
     create_table :buckets do |t|
       t.string :name
       t.text :description
-      t.integer :owner
+      t.integer :owner_id
       t.timestamps
     end
   end
