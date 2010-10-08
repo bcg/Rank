@@ -5,7 +5,7 @@
       
 %div.grid_4.omega
   %div.roundedbutton
-    = link_to(image_tag("add.png", :size => "16x16")+"Create a new bucket", new_bucket_url)
+    = link_to(image_tag("add.png", :size => "16x16")+"Create a new category", new_bucket_url)
   %ul.bucket-list
     - for bucket in @buckets
       %li= link_to bucket.name, bucket

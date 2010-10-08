@@ -1,6 +1,33 @@
 body
   :font-family Rockwell, Helvetica, Arial, sans-serif
   :font-size 10px
+
+.flash
+  :position absolute
+  :top 5px
+  :left 5px
+  :border solid 3px #EEE
+  :background #FFF
+  :color #333
+  :font-size 14px
+  :line-height 18px
+  :z-index 1000
+  :padding 10px 15px
+  :width 300px
+  :-webkit-border-radius 10px
+  :-moz-border-radius 10px
+  :border-radius 10px
+  :-webkit-box-shadow 4px 4px 4px rgba(0, 0, 0, .33)
+  :-moz-box-shadow 4px 4px 4px rgba(0, 0, 0, .33)
+  img
+    :float left
+    :margin-right 10px
+.flash.notice
+  :border-color #17681E
+  :color #17681E
+.flash.error
+  :border-color #691717
+  :color #691717
   
 #header-bar
   :background rgba(0, 0, 0, .8)

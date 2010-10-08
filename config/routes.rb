@@ -13,7 +13,7 @@ Orgg3::Application.routes.draw do
     resources :comments
   end
 
-  resources :buckets do 
+  resources :buckets, :path => 'categories' do 
     member do
       post 'join'
     end

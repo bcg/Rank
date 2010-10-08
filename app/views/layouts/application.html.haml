@@ -6,8 +6,18 @@
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
     = javascript_include_tag 'rails', 'application'
     = csrf_meta_tag
+    
+    :javascript
+      $(document).ready(function(){ 
+        $('.flash').animate({opacity:1}, 500).fadeIn('fast').animate({opacity:1.0}, 5000).fadeOut('slow');
+      });
+      
 
   %body{ :class => "#{controller.controller_name}-#{controller.action_name}" }
+    - unless flash.empty?
+      %div#flash.flash{ :style => "display: none", :class => "#{flash.keys.first}" }
+        = image_tag("flash_#{flash.keys.first}.png", :size => "48x48")
+        =h flash[flash.keys.first]
     %div.container_16
       %div#header-bar
         %div.grid_8
