@@ -32,10 +32,10 @@ class BucketsController < ApplicationController
       permission.user = current_user
       permission.bucket = @bucket
       if permission.save
-        flash[:notice] = "You joined the #{@bucket.name} category."
+        flash[:notice] = "You are now subscribed to #{@bucket.name}. Posts from this category will appear in your dashboard."
         redirect_to @bucket
       else
-        flash[:error] = "Sorry, you cannot join the category at this time."
+        flash[:error] = "Sorry, you cannot subscribe to #{@bucket.name} at this time."
       end
     end
     redirect_to @bucket

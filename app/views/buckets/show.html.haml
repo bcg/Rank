@@ -6,9 +6,10 @@
     = render :partial => "/posts/post", :collection => @posts
       
 %div.grid_4.omega
-  - if logged_in? and current_user.member_of?(@bucket)
+  - unless current_user.member_of?(@bucket)
     %div.roundedbutton
-      = link_to(image_tag("add.png", :size => "16x16")+"Submit a new post", new_bucket_post_url(@bucket))
-  - else
-    %div.roundedbutton
-      = link_to(image_tag("add.png", :size => "16x16")+"Join this bucket", join_bucket_url(@bucket), :method => :post)
+      = link_to(image_tag("add.png", :size => "16x16")+"Subscribe", join_bucket_url(@bucket), :method => :post)
+
+  %div.roundedbutton
+    = link_to(image_tag("add.png", :size => "16x16")+"Submit a new post", new_bucket_post_url(@bucket))
+    
