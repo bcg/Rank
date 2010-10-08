@@ -18,7 +18,7 @@ class BucketsController < ApplicationController
     @bucket = Bucket.new(params[:bucket])
     @bucket.owner = current_user
     if @bucket.save
-      flash[:notice] = "Your new bucket has been created."
+      flash[:notice] = "Your new category has been created."
       redirect_to @bucket
     else
       render :action => :new
@@ -32,10 +32,10 @@ class BucketsController < ApplicationController
       permission.user = current_user
       permission.bucket = @bucket
       if permission.save
-        flash[:notice] = "You joined the #{@bucket.name} bucket."
+        flash[:notice] = "You joined the #{@bucket.name} category."
         redirect_to @bucket
       else
-        flash[:error] = "Sorry, you cannot join the bucket at this time."
+        flash[:error] = "Sorry, you cannot join the category at this time."
       end
     end
     redirect_to @bucket
