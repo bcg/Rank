@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %title Orgg3 : For lack of a better name
+    = stylesheet_link_tag "reset", "960", "application", "#{controller.controller_name}"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
+    = javascript_include_tag 'rails', 'application'
+    = csrf_meta_tag
+
+  %body{ :class => "#{controller.controller_name}-#{controller.action_name}" }
+    %div.container_16
+      %div#header-bar
+        %div.grid_8
+          %div.logo
+            orgganizer
+        %div.grid_8
+          %div#user-nav.user-nav
+            - if current_user
+              %span
+                logged in as
+              = link_to current_user.username, user_url(:current)
+              %span
+                = "|"
+              = link_to "log out", logout_url
+            - else
+              = link_to "login", login_url
+              %span
+                or
+              = link_to "create an account", signup_url
+
+      %div.grid_16
+        = yield
