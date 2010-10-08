@@ -1,3 +1,9 @@
+body.dashboard-index h1 {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  color: #555555; }
 body.dashboard-index .bucket-list {
   list-style: none; }
   body.dashboard-index .bucket-list li {

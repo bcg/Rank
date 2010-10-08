@@ -1,15 +1,21 @@
 Orgg3::Application.routes.draw do
 
-  resources :comments
+  resources :comments do
+    member do
+      post 'vote'
+    end
+  end
 
   resources :posts do
+    member do
+      post 'vote'
+    end
     resources :comments
   end
 
   resources :buckets do 
     resources :posts
   end
-    
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'authenticate' => "user_sessions#create", :as => :authenticate

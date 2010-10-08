@@ -9,10 +9,30 @@ body.posts-show p.byline {
   font-size: 12px;
   color: #777777;
   margin-left: 28px;
+  margin-bottom: 10px;
   line-height: 18px; }
   body.posts-show p.byline span.author {
     margin: 0px 5px;
     color: #555555; }
+  body.posts-show p.byline span.spacer {
+    color: #cccccc;
+    margin: 0 5px; }
+  body.posts-show p.byline a:link, body.posts-show p.byline a:visited, body.posts-show p.byline a:active {
+    color: #555555;
+    text-decoration: none; }
+    body.posts-show p.byline a:link img, body.posts-show p.byline a:visited img, body.posts-show p.byline a:active img {
+      vertical-align: top;
+      margin-right: 5px; }
+  body.posts-show p.byline a:hover {
+    text-decoration: underline; }
+body.posts-show .post-body {
+  font-size: 14px;
+  color: #333333;
+  line-height: 18px;
+  margin-bottom: 18px;
+  margin-left: 28px; }
+body.posts-show .post-body:last-child {
+  margin-bottom: 0px; }
 body.posts-show .post-comment-form {
   margin-top: 20px;
   margin-left: 26px; }

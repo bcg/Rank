@@ -22,5 +22,15 @@ class PostsController < ApplicationController
       render :action => :new
     end
   end
+
+  def vote
+    @post = Post.find(params[:id])
+    unless Vote.exists?({:voter_id => current_user.id, :post_id => @post.id})
+      vote = Vote.new
+      vote.voter = current_user
+      vote.post = @post
+      vote.save
+    end
+  end
   
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101008033038) do
+ActiveRecord::Schema.define(:version => 20101008060134) do
 
   create_table "buckets", :force => true do |t|
     t.string   "name"
@@ -67,5 +67,12 @@ ActiveRecord::Schema.define(:version => 20101008033038) do
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
   add_index "users", ["username"], :name => "index_users_on_username"
+
+  create_table "votes", :force => true do |t|
+    t.integer  "voter_id"
+    t.integer  "post_id"
+    t.integer  "comment_id"
+    t.datetime "created_at"
+  end
 
 end

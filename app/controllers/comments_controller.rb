@@ -11,4 +11,15 @@ class CommentsController < ApplicationController
       render :text => "", :status => 500
     end
   end
+
+  def vote
+    comment = Comment.find(params[:id])
+    unless Vote.exists?(:voter_id => current_user.id, :comment_id => comment.id)
+      vote = Vote.new
+      vote.voter = current_user
+      vote.post = post
+      vote.save
+    end
+  end
+
 end
