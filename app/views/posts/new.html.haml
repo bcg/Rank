@@ -2,6 +2,8 @@
   %div.simple-form
     %h1 Post something to #{@bucket.name}
 
+    %p Write a post to the #{@bucket.name} category.  Posts that have a URL will ignore the message body.
+
     = form_for @post, :url => bucket_posts_url(@bucket) do |f|
       = f.error_messages
       %fieldset
@@ -9,11 +11,11 @@
           = f.label :title
           = f.text_field :title, :size => 80, :class => "text", :autofocus => true
         %div.optional-field#url-field-option
-          = link_to_function "Include a website URL with this post", "$('#url_field').slideDown('fast', function() { $('#post_url').focus(); }); $('#url-field-option').hide();"
+          = link_to_function "Post a website", "$('#url_field').show(); $('#post_url').focus(); $('#body_field').hide(); $('#url-field-option').hide();"
         %div.field#url_field{ :style => "display:none" }
           = f.label :url
           = f.text_field :url, :size => 80, :class => "text"
-        %div.field
+        %div.field#body_field
           = f.label :body
           = f.text_area :body, :rows => 8, :cols => 80, :class => "text"
         %div.buttons

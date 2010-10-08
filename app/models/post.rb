@@ -6,8 +6,12 @@ class Post < ActiveRecord::Base
   has_many :comments, :order => "created_at DESC"
   has_many :votes
   validates :title, :length => { :minimum => 1 }
-  validates :body, :length => { :minimum => 1 }
+  validates :body, :length => { :minimum => 1 }, :unless => Proc.new { |p| p.is_link? }
   
   trim_fields :title, :body
 
+  def is_link?
+    !self.url.blank?
+  end
+  
 end
