@@ -1,6 +1,6 @@
 %div.grid_12.alpha
   %h1 #{@bucket.name} recent posts
-  = simple_format @bucket.description
+  = simple_format @bucket.description, :class => "bucket-description"
 
   %div#posts.post-list
     = render :partial => "/posts/post", :collection => @posts
