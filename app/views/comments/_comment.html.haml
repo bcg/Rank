@@ -1,0 +1,6 @@
+%div.comment{ :id => "comment_#{comment.id}" }
+  %p.comment-byline
+    = link_to image_tag("up.png", :size => "16x16"), "", :title => "Up vote this comment"
+    posted #{time_ago_in_words(comment.created_at)} ago by
+    %span.author= comment.author.username
+  = simple_format(comment.body, :class => "comment-body")

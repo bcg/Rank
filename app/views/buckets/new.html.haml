@@ -1,0 +1,17 @@
+%div.grid_10.prefix_3.suffix_3.alpha.omega
+  %div.simple-form
+    %h1 Create A New Bucket
+
+    %p What is a bucket?
+
+    = form_for @bucket do |f|
+      = f.error_messages
+      %fieldset
+        %div.field
+          = f.label :name
+          = f.text_field :name, :size => 40, :class => "text"
+        %div.field
+          = f.label :description
+          = f.text_area :description, :rows => 6, :cols => 50, :class => "text"
+        %div.buttons
+          = f.submit "Create bucket", :class => "button"

@@ -1,0 +1,20 @@
+%div.grid_12.prefix_2.suffix_2.alpha.omega
+  %div.simple-form
+    %h1 Post something new to #{@bucket.name}
+
+    = form_for @post, :url => bucket_posts_url(@bucket) do |f|
+      = f.error_messages
+      %fieldset
+        %div.field
+          = f.label :title
+          = f.text_field :title, :size => 80, :class => "text", :autofocus => true
+        %div.optional-field#url-field-option
+          = link_to_function "Include a website URL with this post", "$('#url_field').slideDown('fast'); $('#url-field-option').hide();"
+        %div.field#url_field{ :style => "display:none" }
+          = f.label :url
+          = f.text_field :url, :size => 80, :class => "text"
+        %div.field
+          = f.label :body
+          = f.text_area :body, :rows => 8, :cols => 80, :class => "text"
+        %div.buttons
+          = f.submit "Save new post", :class => "button"

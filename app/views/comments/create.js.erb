@@ -1,0 +1,3 @@
+$('#comments').prepend('<%= escape_javascript(render(@comment)) %>');
+$('.post-comment-form').hide();
+$('#comment_<%= @comment.id %>').fadeIn('slow');

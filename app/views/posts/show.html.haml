@@ -1,0 +1,17 @@
+%h1
+  = link_to image_tag("up.png", :size => "16x16"), "", :title => "Up vote this post"
+  = @post.title
+%p.byline
+  posted by 
+  %span.author= @post.author.username
+  #{time_ago_in_words(@post.author.created_at)} ago
+  
+%div.post-comment-form
+  = form_for :comment, @comment, :url => post_comments_url(@post), :remote => true do |f|
+    %div.field
+      = f.text_area :body, :class => "text", :rows => 8, :cols => 80
+    %div.buttons
+      = f.submit "Post comment", :class => "button"
+      
+%div#comments
+  = render :partial => "/comments/comment", :collection => @post.comments

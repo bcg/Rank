@@ -1,0 +1,4 @@
+%h1= @bucket.name
+= simple_format @bucket.description
+
+= link_to "Create new post", new_bucket_post_url(@bucket)
