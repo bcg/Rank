@@ -3,6 +3,7 @@ class BucketsController < ApplicationController
 
   def show
     @bucket = Bucket.find(params[:id])
+    @posts = Post.find(:all, :conditions => { :bucket_id => @bucket.id }, :order => "created_at DESC")
   end
   
   def new

@@ -96,6 +96,59 @@ body {
     .login-help p a:link, .login-help p a:visited, .login-help p a:active {
       color: blue; }
 
+.registration-form {
+  padding-top: 50px; }
+  .registration-form h1 {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 18px;
+    font-weight: bold;
+    color: #555555; }
+  .registration-form form .errorExplanation {
+    margin-bottom: 15px; }
+    .registration-form form .errorExplanation h2 {
+      display: none; }
+    .registration-form form .errorExplanation p {
+      display: none; }
+    .registration-form form .errorExplanation ul {
+      list-style: none;
+      border-style: solid none;
+      border-color: #aa0000;
+      border-width: 1px; }
+      .registration-form form .errorExplanation ul li {
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #7c2d2d;
+        background: #ffe6e6; }
+  .registration-form form .field {
+    clear: both;
+    margin-bottom: 5px; }
+    .registration-form form .field label {
+      float: left;
+      font-size: 14px;
+      width: 125px;
+      color: #333333;
+      padding-top: 7px; }
+    .registration-form form .field .text {
+      margin: 3px;
+      padding: 3px;
+      font-size: 14px;
+      color: #555555;
+      font-weight: bold; }
+  .registration-form form .field_with_errors {
+    display: inline; }
+    .registration-form form .field_with_errors .text {
+      background: #ffe6e6; }
+  .registration-form form .remember {
+    font-size: 14px;
+    color: #555555; }
+    .registration-form form .remember input {
+      margin-left: 10px; }
+  .registration-form form .buttons {
+    margin-top: 10px; }
+    .registration-form form .buttons .button {
+      margin-left: 128px; }
+
 .simple-form h1 {
   font-size: 24px;
   line-height: 36px;
@@ -165,3 +218,57 @@ body {
   margin-top: 10px; }
   .simple-form form .buttons .button {
     margin-left: 103px; }
+
+.roundedbutton {
+  display: block;
+  background: rgba(23, 55, 104, 0.85);
+  text-align: center;
+  padding: 6px 0;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  text-shadow: #333333 2px 2px 2px;
+  margin-bottom: 5px; }
+  .roundedbutton a:link, .roundedbutton a:visited {
+    color: #fffedb;
+    text-decoration: none;
+    padding: 8px 20px; }
+  .roundedbutton a:hover {
+    color: white; }
+  .roundedbutton img {
+    vertical-align: top;
+    padding-top: 2px;
+    margin-right: 5px; }
+
+.post-list .post-summary p.title {
+  font-size: 24px;
+  line-height: 36px;
+  color: #555555; }
+  .post-list .post-summary p.title img {
+    vertical-align: middle;
+    margin-right: 5px; }
+  .post-list .post-summary p.title a:link, .post-list .post-summary p.title a:visited, .post-list .post-summary p.title a:active {
+    color: #555555;
+    text-decoration: none; }
+  .post-list .post-summary p.title a:hover {
+    text-decoration: underline; }
+.post-list .post-summary p.byline {
+  font-size: 12px;
+  color: #777777;
+  margin-left: 28px;
+  line-height: 18px; }
+  .post-list .post-summary p.byline span.bucket, .post-list .post-summary p.byline span.author {
+    margin: 0px 5px;
+    color: #555555; }
+    .post-list .post-summary p.byline span.bucket a:link, .post-list .post-summary p.byline span.bucket a:visited, .post-list .post-summary p.byline span.bucket a:active, .post-list .post-summary p.byline span.author a:link, .post-list .post-summary p.byline span.author a:visited, .post-list .post-summary p.byline span.author a:active {
+      color: #555555;
+      text-decoration: none; }
+    .post-list .post-summary p.byline span.bucket a:hover, .post-list .post-summary p.byline span.author a:hover {
+      text-decoration: underline; }
+  .post-list .post-summary p.byline span.spacer {
+    margin: 0px 5px;
+    color: #cccccc; }

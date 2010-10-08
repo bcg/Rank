@@ -20,6 +20,8 @@ Orgg3::Application.routes.draw do
 
   resources :users
 
+  match 'dashboard' => 'dashboard#index', :as => :dashboard
+
   root :to => "dashboard#index"
 
   # The priority is based upon order of creation:

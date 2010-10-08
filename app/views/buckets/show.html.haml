@@ -1,4 +1,10 @@
-%h1= @bucket.name
-= simple_format @bucket.description
+%div.grid_12.alpha
+  %h1= @bucket.name
+  = simple_format @bucket.description
 
-= link_to "Create new post", new_bucket_post_url(@bucket)
+  %div#posts.post-list
+    = render :partial => "/posts/post", :collection => @posts
+      
+%div.grid_4.omega
+  %div.roundedbutton
+    = link_to(image_tag("plus.png", :size => "16x16")+"Write new post", new_bucket_post_url(@bucket))

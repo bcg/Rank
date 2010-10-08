@@ -1,0 +1,12 @@
+%div.post-summary{ :id => "post_#{post.id}" }
+  %p.title
+    = link_to image_tag("up.png", :size => "16x16"), "", :title => "Up vote this post"
+    = link_to post.title, post_url(post)
+  %p.byline
+    posted to
+    %span.bucket= link_to post.bucket.name, post.bucket
+    by 
+    %span.author= post.author.username
+    #{time_ago_in_words(post.author.created_at)} ago
+    %span.spacer= "|"
+    = pluralize(post.comments.size, "comment")

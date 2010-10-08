@@ -1,36 +1,34 @@
-%h1 Register
+%div.grid_9.prefix_1.alpha
+  %div.registration-form
+    %h1 Create your account
 
-= form_for @user do |f|
-  = f.error_messages
-  %p
-    = f.label :first
-    %br
-    = f.text_field :first
+    = form_for @user do |f|
+      = f.error_messages
+      %fieldset
+        %div.field
+          = f.label :first
+          = f.text_field :first, :size => 20, :class => "text", :autofocus => true
+        %div.field
+          = f.label :last
+          = f.text_field :last, :size => 20, :class => "text"
+        %div.field
+          = f.label :email
+          = f.text_field :email, :size => 40, :class => "text"
+        %div.field
+          = f.label :username
+          = f.text_field :username, :size => 15, :class => "text"
+        %div.field
+          = f.label :password
+          = f.password_field :password, :size => 15, :class => "text"
+        %div.field
+          = f.label :password_confirmation, "Retype password"
+          = f.password_field :password_confirmation, :size => 15, :class => "text"
+        %div.buttons
+          = f.submit "Register your account", :class => "button"
+
+%div.grid_5.suffix_1.omega
+  %div.login-help
     
-  %p
-    = f.label :last
-    %br
-    = f.text_field :last
-  
-  %p
-    = f.label :email
-    %br
-    = f.text_field :email
-  
-  %p
-    = f.label :username
-    %br
-    = f.text_field :username
-    
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password
-    
-  %p
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation
-    
-  %p
-    = f.submit "Create new account"
+    %h2 Already have an account?
+    %p
+      = link_to "Log in now.", login_url

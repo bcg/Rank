@@ -1,0 +1,17 @@
+body.dashboard-index .bucket-list {
+  list-style: none; }
+  body.dashboard-index .bucket-list li {
+    font-size: 14px;
+    display: block;
+    border-top: solid 1px #e6e6e6; }
+    body.dashboard-index .bucket-list li a:link, body.dashboard-index .bucket-list li a:visited, body.dashboard-index .bucket-list li a:active {
+      color: #555555;
+      padding: 5px 10px;
+      display: block;
+      text-decoration: none; }
+    body.dashboard-index .bucket-list li a:hover {
+      text-decoration: underline; }
+    body.dashboard-index .bucket-list li a:hover {
+      background: #eeeeee; }
+  body.dashboard-index .bucket-list li:last-child {
+    border-bottom: solid 1px #e6e6e6; }

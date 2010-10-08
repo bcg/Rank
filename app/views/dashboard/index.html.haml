@@ -1,1 +1,10 @@
-= link_to "Create a new bucket", new_bucket_url
+%div.grid_12.alpha
+  %div#posts.post-list
+    = render :partial => "/posts/post", :collection => @posts
+      
+%div.grid_4.omega
+  %div.roundedbutton
+    = link_to(image_tag("plus.png", :size => "16x16")+"Create a new bucket", new_bucket_url)
+  %ul.bucket-list
+    - for bucket in @buckets
+      %li= link_to bucket.name

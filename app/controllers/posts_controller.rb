@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     @bucket = Bucket.find(params[:bucket_id])
     @post = Post.new(params[:post])
+    @post.bucket = @bucket
     @post.author = current_user
     if @post.save
       flash[:notice] = "Successfully saved your post to #{@bucket.name}."
