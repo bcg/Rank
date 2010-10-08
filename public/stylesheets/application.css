@@ -43,6 +43,11 @@ body {
     font-size: 20px;
     font-weight: bold;
     padding: 5px 10px; }
+    #header-bar .logo a:link, #header-bar .logo a:visited, #header-bar .logo a:active {
+      color: white;
+      text-decoration: none; }
+    #header-bar .logo a:hover {
+      text-decoration: underline; }
   #header-bar .user-nav {
     font-size: 14px;
     padding: 10px 10px;

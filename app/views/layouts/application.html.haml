@@ -22,7 +22,7 @@
       %div#header-bar
         %div.grid_8
           %div.logo
-            #{@site_configuration.display_name}
+            = link_to @site_configuration.display_name, dashboard_url
         %div.grid_8
           %div#user-nav.user-nav
             - if current_user
