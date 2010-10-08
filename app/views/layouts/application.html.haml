@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title ideas.codestorming.com
+    %title #{@site_configuration.display_name}
     = stylesheet_link_tag "reset", "960", "application", "#{controller.controller_name}"
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
     = javascript_include_tag 'rails', 'application'
@@ -22,7 +22,7 @@
       %div#header-bar
         %div.grid_8
           %div.logo
-            ideas
+            #{@site_configuration.display_name}
         %div.grid_8
           %div#user-nav.user-nav
             - if current_user

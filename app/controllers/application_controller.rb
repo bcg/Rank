@@ -1,9 +1,20 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :logged_in?
+  before_filter :load_site_configuration
 
   protect_from_forgery 
   
   private
+  
+  def load_site_configuration
+    @site_configuration = SiteConfiguration.first
+    if @site_configuration.nil?
+      @site_configuration = SiteConfiguration.new
+      @site_configuration.display_name = "Unconfigured System"
+      flash[:error] = "You have not set the system configuration yet."
+      redirect_to root_url
+    end
+  end
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

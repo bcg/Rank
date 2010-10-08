@@ -1,5 +1,5 @@
 class BucketsController < ApplicationController
-  before_filter :login_required, :only => [ :new, :create, :join ]
+  before_filter :login_required
 
   def index
     @buckets = Bucket.find(:all)

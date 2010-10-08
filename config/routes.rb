@@ -1,5 +1,7 @@
 Orgg3::Application.routes.draw do
 
+  # resource :site_configuration
+
   resources :comments do
     member do
       post 'vote'
@@ -31,7 +33,7 @@ Orgg3::Application.routes.draw do
 
   match 'dashboard' => 'dashboard#index', :as => :dashboard
 
-  root :to => "dashboard#index"
+  root :to => "user_sessions#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

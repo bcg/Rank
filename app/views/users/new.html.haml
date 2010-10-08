@@ -2,12 +2,16 @@
   %div.registration-form
     %h1 Create your account
 
-    = form_for @user do |f|
+    = form_for @user, :url => register_url do |f|
       = f.error_messages
       %fieldset
+        - unless @site_configuration.signup_password.blank?
+          %div.field
+            = label_tag :registration_code, "Registration Code"
+            = text_field_tag :registration_code, nil, :size => 15, :class => "text", :autofocus => true
         %div.field
           = f.label :first
-          = f.text_field :first, :size => 20, :class => "text", :autofocus => true
+          = f.text_field :first, :size => 20, :class => "text", :autofocus => !@site_configuration.signup_password.blank?
         %div.field
           = f.label :last
           = f.text_field :last, :size => 20, :class => "text"

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :login_required, :only => [ :new, :create, :vote ]
+  before_filter :login_required
   
   def show
     @post = Post.find(params[:id])

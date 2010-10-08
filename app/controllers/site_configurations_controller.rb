@@ -1,0 +1,2 @@
+class SiteConfigurationsController < ApplicationController
+end
