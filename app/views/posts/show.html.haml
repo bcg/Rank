@@ -1,14 +1,4 @@
-%h1
-  = link_to image_tag("up.png", :size => "16x16"), "", :title => "Up vote this post"
-  = @post.title
-%p.byline
-  posted by 
-  %span.author= @post.author.username
-  #{time_ago_in_words(@post.author.created_at)} ago
-  - if @post.url
-    %span.spacer= "|"
-    = link_to(image_tag("link.png", :size => "16x16") + "link", @post.url)
-  
+= render :partial => "post", :locals => { :post => @post }  
 
 = simple_format(@post.body, :class => "post-body")
   

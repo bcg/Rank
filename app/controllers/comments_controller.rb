@@ -13,11 +13,11 @@ class CommentsController < ApplicationController
   end
 
   def vote
-    comment = Comment.find(params[:id])
-    unless Vote.exists?(:voter_id => current_user.id, :comment_id => comment.id)
+    @comment = Comment.find(params[:id])
+    unless Vote.exists?(:voter_id => current_user.id, :comment_id => @comment.id)
       vote = Vote.new
       vote.voter = current_user
-      vote.post = post
+      vote.comment = @comment
       vote.save
     end
   end

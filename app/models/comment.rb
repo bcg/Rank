@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   validates_presence_of :author
   belongs_to :post
   validates_presence_of :post
-  
+  has_many :votes
   validates :body, :length => { :minimum => 1 }
   
   trim_fields :body

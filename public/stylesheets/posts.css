@@ -60,6 +60,9 @@ body.posts-show .comment {
     body.posts-show .comment .comment-byline span.author {
       margin: 0px 5px;
       color: #555555; }
+    body.posts-show .comment .comment-byline span.spacer {
+      margin-right: 5px;
+      color: #cccccc; }
     body.posts-show .comment .comment-byline img {
       vertical-align: middle;
       margin-right: 5px; }

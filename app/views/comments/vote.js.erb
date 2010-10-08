@@ -1,0 +1,1 @@
+$('#comment_<%= @comment.id %> .votes').html('<%= escape_javascript(pluralize(@comment.votes.count, "point")) %>')
