@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
   
   def create
+    @buckets = Bucket.find(:all, :order => "name ASC")
     @post = Post.new(params[:post])
     @post.author = current_user
     if @post.save
