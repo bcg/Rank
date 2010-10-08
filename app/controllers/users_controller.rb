@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:notice] = "Your account has been created, thank you for registering."
-      redirect_to root_url
+      redirect_to dashboard_url
     else
       render :action => "new"
     end
