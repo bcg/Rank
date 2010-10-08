@@ -6,17 +6,17 @@ class PostsController < ApplicationController
   end
   
   def new
-    @bucket = Bucket.find(params[:bucket_id])
+    @bucket = Bucket.find(params[:bucket_id]) if params[:bucket_id]
+    @buckets = Bucket.find(:all, :order => "name ASC")
     @post = Post.new
+    @post.bucket = @bucket
   end
   
   def create
-    @bucket = Bucket.find(params[:bucket_id])
     @post = Post.new(params[:post])
-    @post.bucket = @bucket
     @post.author = current_user
     if @post.save
-      flash[:notice] = "Successfully saved your post to #{@bucket.name}."
+      flash[:notice] = "Successfully saved your post to #{@post.bucket.name}."
       redirect_to @post
     else
       render :action => :new

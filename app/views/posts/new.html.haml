@@ -1,12 +1,15 @@
 %div.grid_12.prefix_2.suffix_2.alpha.omega
   %div.simple-form
-    %h1 Post something to #{@bucket.name}
+    %h1 Post something
 
-    %p Write a post to the #{@bucket.name} category.  Posts that have a URL will ignore the message body.
+    %p Posts that have a URL will ignore the message body.
 
-    = form_for @post, :url => bucket_posts_url(@bucket) do |f|
+    = form_for @post, :url => posts_url() do |f|
       = f.error_messages
       %fieldset
+        %div.field.padforselect
+          = f.label :bucket_id, "Category"
+          = f.select :bucket_id, options_for_buckets(@buckets, f.object.bucket_id)
         %div.field
           = f.label :title
           = f.text_field :title, :size => 80, :class => "text", :autofocus => true
