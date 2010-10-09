@@ -1,9 +1,12 @@
 %div.comment{ :id => "comment_#{comment.id}" }
   %p.comment-byline
-    = link_to image_tag("up.png", :size => "16x16"), vote_comment_url(comment), :title => "Up vote this comment", :remote => :true, :method => :post
-    posted #{time_ago_in_words(comment.created_at)} ago by
-    %span.author= comment.author.username
-    %span.spacer= "|"
+    %span.vote-actions<
+      = link_to image_tag("up.png", :size => "16x16"), upvote_comment_url(comment), :title => "Up vote this comment", :remote => :true, :method => :post
+      = link_to image_tag("down.png", :size => "16x16"), downvote_comment_url(comment), :title => "Down vote this comment", :remote => :true, :method => :post
     %span.votes
-      = pluralize(comment.votes.count, "point")
+      = pluralize(comment.score, "point")
+    %span.spacer= "|"
+    posted by
+    %span.author= comment.author.username
+    #{time_ago_in_words(comment.created_at)} ago
   = simple_format(comment.body, :class => "comment-body")

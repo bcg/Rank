@@ -1,16 +1,22 @@
 %div.post-summary{ :id => "post_#{post.id}" }
   %p.title
-    = link_to image_tag("up.png", :size => "16x16"), vote_post_url(post), :remote => true, :method => :post, :title => "Up vote this post"
+    %span.vote-actions<
+      = link_to image_tag("up.png", :size => "16x16"), upvote_post_url(post), :remote => true, :method => :post, :title => "Up vote this post"
+      = link_to image_tag("down.png", :size => "16x16"), downvote_post_url(post), :remote => true, :method => :post, :title => "Down vote this post"
+
     - if post.is_link?
       = link_to post.title, post.url, :target => "_blank"
+      = image_tag("link.png")
     - else
       = link_to post.title, post_url(post)
   %p.byline
     %span.votes
-      #{pluralize(post.votes.count, "point")}
+      #{pluralize(post.score, "point")}
     %span.spacer= "|"
-    posted to
-    %span.bucket= link_to post.bucket.name, post.bucket
+    posted
+    - if defined?(include_category) and include_category
+      to
+      %span.bucket= link_to post.bucket.name, post.bucket
     by 
     %span.author= post.author.username
     #{time_ago_in_words(post.author.created_at)} ago

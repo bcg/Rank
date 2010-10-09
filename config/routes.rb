@@ -4,13 +4,15 @@ Orgg3::Application.routes.draw do
 
   resources :comments do
     member do
-      post 'vote'
+      post 'upvote'
+      post 'downvote'
     end
   end
 
   resources :posts do
     member do
-      post 'vote'
+      post 'upvote'
+      post 'downvote'
     end
     resources :comments
   end

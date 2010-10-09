@@ -6,5 +6,11 @@ class Comment < ActiveRecord::Base
   has_many :votes
   validates :body, :length => { :minimum => 1 }
   
+  attr_protected :author_id, :post_id, :score_counter
+  
   trim_fields :body
+  
+  def score
+    self.score_counter
+  end
 end

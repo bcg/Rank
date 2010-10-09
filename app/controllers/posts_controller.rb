@@ -24,14 +24,36 @@ class PostsController < ApplicationController
     end
   end
 
-  def vote
+  def upvote
     @post = Post.find(params[:id])
-    unless Vote.exists?({:voter_id => current_user.id, :post_id => @post.id})
+    prev = Vote.find(:first, :conditions => {:voter_id => current_user.id, :post_id => @post.id})
+    if prev.nil?
       vote = Vote.new
       vote.voter = current_user
       vote.post = @post
+      vote.score = 1
       vote.save
+    elsif prev and prev.score == -1
+      prev.score = 1
+      prev.save
     end
+    @post.reload
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    prev = Vote.find(:first, :conditions => {:voter_id => current_user.id, :post_id => @post.id})
+    if prev.nil?
+      vote = Vote.new
+      vote.voter = current_user
+      vote.post = @post
+      vote.score = -1
+      vote.save
+    elsif prev and prev.score == 1
+      prev.score = -1
+      prev.save
+    end
+    @post.reload
   end
   
 end
