@@ -4,7 +4,7 @@
 
     %p Posts that have a URL will ignore the message body.
 
-    = form_for @post, :url => posts_url() do |f|
+    = form_for @post, :url => posts_url(), :html => { :onsubmit => "$('#submit_button').attr('disabled', true); return true;" } do |f|
       = f.error_messages
       %fieldset
         %div.field.padforselect
@@ -22,4 +22,4 @@
           = f.label :body
           = f.text_area :body, :rows => 8, :cols => 80, :class => "text"
         %div.buttons
-          = f.submit "Submit new post", :class => "button"
+          = f.submit "Submit new post", :class => "button", :id => "submit_button"

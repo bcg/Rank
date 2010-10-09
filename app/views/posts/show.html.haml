@@ -1,16 +1,16 @@
 %div.breadcrumb
   = link_to image_tag("left_arrow_48.png", :size => "32x32"), bucket_url(@post.bucket)
   = link_to "#{@post.bucket.name}", bucket_url(@post.bucket)
-= render :partial => "post", :locals => { :post => @post }  
+= render :partial => "post", :locals => { :post => @post, :comment_link_anchor => "comments" }  
 
 = simple_format(@post.body, :class => "post-body")
   
 %div.post-comment-form
-  = form_for :comment, @comment, :url => post_comments_url(@post), :remote => true do |f|
+  = form_for :comment, @comment, :url => post_comments_url(@post), :remote => true, :html => { :onsubmit => "$('#comment_submit_button').attr('disabled', true); return true;" } do |f|
     %div.field
       = f.text_area :body, :class => "text", :rows => 8, :cols => 80
     %div.buttons
-      = f.submit "Post comment", :class => "button"
+      = f.submit "Post comment", :class => "button", :id => "comment_submit_button"
       
 %div#comments
   = render :partial => "/comments/comment", :collection => @post.comments

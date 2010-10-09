@@ -6,10 +6,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.post = @post
     @comment.author = current_user
-    if @comment.save
-    else
-      render :text => "", :status => 500
-    end
+    @comment.save
   end
 
   def upvote

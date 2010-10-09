@@ -57,7 +57,7 @@ body.posts-show .comment {
       margin: 0px 5px;
       color: #555555; }
     body.posts-show .comment .comment-byline span.spacer {
-      margin-right: 5px;
+      margin: 0 5px;
       color: #cccccc; }
     body.posts-show .comment .comment-byline span.vote-actions {
       margin-right: 5px; }

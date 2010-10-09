@@ -21,4 +21,7 @@
     %span.author= post.author.username
     #{time_ago_in_words(post.author.created_at)} ago
     %span.spacer= "|"
-    = link_to(pluralize(post.comments.size, "comment"), post_url(post))
+    - if defined?(comment_link_anchor)
+      = link_to(pluralize(post.comments.size, "comment"), "##{comment_link_anchor}")
+    - else
+      = link_to(pluralize(post.comments.size, "comment"), post_url(post))
