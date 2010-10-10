@@ -1,0 +1,22 @@
+!!! Strict
+%html
+  = stylesheet_link_tag "reset", "application"
+  = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+  = javascript_include_tag 'rails'
+  = csrf_meta_tag
+  
+  %body
+    %div#bookmarklet.bookmarklet-form
+      - form_for @post, :url => bookmarklet_url(:format => :js, :token => current_user.single_access_token), :remote => true, :method => :post, :html => { :onsubmit => "$('#button').attr('disabled', true); return true;" } do |f|
+        %fieldset
+          %div.field.padforselect
+            = f.label :bucket_id, "Category"
+            = f.select :bucket_id, options_for_buckets(@buckets, f.object.bucket_id)
+          %div.field
+            = f.label :title
+            = f.text_field :title, :size => 50, :class => "text", :autofocus => true
+          %div.field
+            = f.label :url, "URL"
+            = f.text_field :url, :size => 50, :class => "text"
+          %div.buttons
+            = f.submit "Submit", :class => "button", :id => "button"

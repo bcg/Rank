@@ -61,6 +61,52 @@ body {
       color: white;
       text-decoration: underline; }
 
+#tools {
+  border: solid 5px #173768;
+  background: #e9f7ff;
+  padding: 15px 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-bottom: 10px; }
+  #tools p.tools-title {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 18px;
+    color: #173768;
+    font-weight: bold; }
+    #tools p.tools-title span {
+      float: right;
+      font-size: 14px;
+      font-weight: normal; }
+      #tools p.tools-title span a:link, #tools p.tools-title span a:visited, #tools p.tools-title span a:active {
+        color: red; }
+  #tools p.tools-description {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 18px; }
+  #tools p.tools-link {
+    text-align: center; }
+    #tools p.tools-link span {
+      display: inline;
+      background: #777777;
+      background: rgba(0, 0, 0, 0.65);
+      text-align: center;
+      padding: 6px 0;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      -webkit-border-radius: 18px;
+      -moz-border-radius: 18px;
+      border-radius: 18px;
+      text-decoration: none;
+      text-shadow: #333333 2px 2px 2px;
+      margin-bottom: 5px; }
+      #tools p.tools-link span a:link, #tools p.tools-link span a:visited, #tools p.tools-link span a:active {
+        color: white;
+        text-decoration: none;
+        padding: 8px 30px; }
+
 .login-form {
   padding-top: 50px; }
   .login-form h1 {
@@ -246,14 +292,55 @@ body {
   display: inline; }
   .simple-form form .field_with_errors .text {
     background: #ffe6e6; }
-.simple-form form .remember {
-  font-size: 14px;
-  color: #555555; }
-  .simple-form form .remember input {
-    margin-left: 10px; }
 .simple-form form .buttons {
   margin-top: 10px; }
   .simple-form form .buttons .button {
+    margin-left: 103px; }
+
+.bookmarklet-form .response {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #333333; }
+.bookmarklet-form form .errorExplanation {
+  margin-bottom: 15px; }
+  .bookmarklet-form form .errorExplanation h2 {
+    display: none; }
+  .bookmarklet-form form .errorExplanation p {
+    display: none; }
+  .bookmarklet-form form .errorExplanation ul {
+    list-style: none;
+    border-style: solid none;
+    border-color: #aa0000;
+    border-width: 1px; }
+    .bookmarklet-form form .errorExplanation ul li {
+      padding: 5px 10px;
+      font-size: 14px;
+      color: #7c2d2d;
+      background: #ffe6e6; }
+.bookmarklet-form form .field {
+  clear: both;
+  margin-bottom: 5px; }
+  .bookmarklet-form form .field label {
+    float: left;
+    font-size: 14px;
+    width: 100px;
+    color: #333333;
+    padding-top: 7px; }
+  .bookmarklet-form form .field input.text {
+    margin: 3px;
+    padding: 3px;
+    font-size: 14px;
+    color: #555555;
+    font-weight: bold; }
+.bookmarklet-form form .field.padforselect label {
+  padding-top: 0px; }
+.bookmarklet-form form .field_with_errors {
+  display: inline; }
+  .bookmarklet-form form .field_with_errors .text {
+    background: #ffe6e6; }
+.bookmarklet-form form .buttons {
+  margin-top: 10px; }
+  .bookmarklet-form form .buttons .button {
     margin-left: 103px; }
 
 .roundedbutton {

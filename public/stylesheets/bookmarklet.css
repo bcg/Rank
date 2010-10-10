@@ -1,0 +1,48 @@
+body {
+  font-size: 62.5%;
+  font-family: "Lucida Grande", sans-serif; }
+  body form textarea {
+    font-family: "Lucida Grande", Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 3px;
+    width: 300px; }
+  body form #publishing-options {
+    margin-top: 4px;
+    font-size: 12px; }
+    body form #publishing-options p.heading {
+      color: #333333;
+      font-weight: bold;
+      margin-bottom: 10px; }
+    body form #publishing-options .option {
+      margin: 3px 0; }
+      body form #publishing-options .option input {
+        vertical-align: middle; }
+      body form #publishing-options .option span {
+        padding-top: 1px;
+        color: #333333; }
+  body form .buttons {
+    margin-top: 5px;
+    padding-right: 12px; }
+    body form .buttons span#options-link a:link, body form .buttons span#options-link a:visited, body form .buttons span#options-link a:active {
+      color: blue;
+      margin-left: 5px; }
+  body form p#char-count-container {
+    float: right;
+    font-size: 10px;
+    padding-top: 6px;
+    padding-right: 12px;
+    color: #555555; }
+    body form p#char-count-container .over {
+      color: red; }
+  body #response {
+    margin-top: 25px; }
+  body p.success, body p.error {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 15px;
+    padding: 0px 15px;
+    margin-bottom: 18px; }
+    body p.success a:link, body p.success a:visited, body p.success a:active, body p.error a:link, body p.error a:visited, body p.error a:active {
+      color: blue; }
+  body p.error {
+    color: #aa0000; }

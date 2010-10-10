@@ -58,6 +58,53 @@ body
     a:hover
       :color #FFF
       :text-decoration underline
+
+#tools
+  :border solid 5px #173768
+  :background #E9F7FF
+  :padding 15px 15px
+  :border-radius 10px
+  :-webkit-border-radius 10px
+  :-moz-border-radius 10px
+  :margin-bottom 10px
+  p.tools-title
+    :font-size 18px
+    :line-height 18px
+    :margin-bottom 18px
+    :color #173768
+    :font-weight bold
+    span
+      :float right
+      :font-size 14px
+      :font-weight normal
+      a:link, a:visited, a:active
+        :color #F00
+  p.tools-description
+    :font-size 14px
+    :color #333
+    :margin-bottom 18px
+  p.tools-link
+    :text-align center
+    span
+      :display inline
+      :background #777
+      :background rgba(0, 0, 0, 0.65)
+      :text-align center
+      :padding 6px 0
+      :color #FFF
+      :font-size 14px
+      :font-weight bold
+      :-webkit-border-radius 18px
+      :-moz-border-radius 18px
+      :border-radius 18px
+      :text-decoration none
+      :text-shadow #333 2px 2px 2px
+      :margin-bottom 5px
+      a:link, a:visited, a:active
+        :color #FFF
+        :text-decoration none
+        :padding 8px 30px
+    
       
 .login-form
   :padding-top 50px
@@ -254,15 +301,60 @@ body
       :display inline
       .text
         :background #FFE6E6
-    .remember
-      :font-size 14px
-      :color #555
-      input
-        :margin-left 10px
     .buttons
       :margin-top 10px
       .button
         :margin-left 103px
+
+.bookmarklet-form
+  .response
+    :margin-top 25px
+    :font-size 14px
+    :color #333
+  form
+    .errorExplanation
+      :margin-bottom 15px
+      h2
+        :display none
+      p
+        :display none
+      ul
+        :list-style none
+        :border-style solid none
+        :border-color #A00
+        :border-width 1px
+        li
+          :padding 5px 10px
+          :font-size 14px
+          :color #7C2D2D
+          :background #FFE6E6
+    .field
+      :clear both
+      :margin-bottom 5px
+      label
+        :float left
+        :font-size 14px
+        :width 100px
+        :color #333
+        :padding-top 7px
+      input.text
+        :margin 3px
+        :padding 3px
+        :font-size 14px
+        :color #555
+        :font-weight bold
+    .field.padforselect
+      label
+        :padding-top 0px
+    .field_with_errors
+      :display inline
+      .text
+        :background #FFE6E6
+    .buttons
+      :margin-top 10px
+      .button
+        :margin-left 103px
+
         
 .roundedbutton
   :display block

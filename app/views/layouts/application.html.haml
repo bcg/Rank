@@ -20,10 +20,10 @@
         =h flash[flash.keys.first]
     %div.container_16
       %div#header-bar
-        %div.grid_8
+        %div.grid_6
           %div.logo
             = link_to @site_configuration.display_name, dashboard_url
-        %div.grid_8
+        %div.grid_10
           %div#user-nav.user-nav
             - if current_user
               %span
@@ -34,12 +34,30 @@
               = link_to "submit", new_post_url
               %span
                 = "|"
+              = link_to_function "tools", "$('#tools-container').slideDown('fast');"
+              %span
+                = "|"
               = link_to "log out", logout_url
             - else
               = link_to "login", login_url
               %span
                 or
               = link_to "create an account", signup_url
+      - if current_user
+        %div#tools-container.grid_12.prefix_2.suffix_2.alpha.omega{ :style => "display:none" }
+          %div#tools
+            %p.tools-title 
+              %span.close
+                = link_to_function "hide tools", "$('#tools-container').slideUp('fast');"
+              Install the browser bookmarklet
+            %p.tools-description
+              Drag and drop the link to your browser bookmark bar for easy posting.
+            %p.tools-link
+              %span.button
+                = render :partial => "/bookmarklet/bookmarklet"
 
       %div.grid_16
         = yield
+
+      %div.grid_16
+        %div#footer.footer

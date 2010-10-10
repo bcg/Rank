@@ -1,0 +1,5 @@
+<% if @post.valid? %>
+$('#bookmarklet').html("<p class='response'>Thanks for submitting your post!</p>");
+<% else %>
+$('#bookmarklet').html("<p class='response'>There was an error, please try again.</p>");
+<% end %>
