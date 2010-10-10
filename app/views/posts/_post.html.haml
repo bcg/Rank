@@ -19,7 +19,7 @@
       %span.bucket= link_to post.bucket.name, post.bucket
     by 
     %span.author= post.author.username
-    #{time_ago_in_words(post.author.created_at)} ago
+    #{time_ago_in_words(post.created_at)} ago
     %span.spacer= "|"
     - if defined?(comment_link_anchor)
       = link_to(pluralize(post.comments.size, "comment"), "##{comment_link_anchor}")
