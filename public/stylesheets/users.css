@@ -1,0 +1,4 @@
+body.users-show .simple-form .field label, body.users-update .simple-form .field label {
+  width: 150px; }
+body.users-show .simple-form .buttons .button, body.users-update .simple-form .buttons .button {
+  margin-left: 153px; }

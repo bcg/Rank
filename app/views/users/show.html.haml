@@ -1,0 +1,27 @@
+%div.grid_10.prefix_2.suffix_2
+  %div.simple-form
+    %h1 Your User Profile
+    
+    = form_for @user, :url => user_url(:current), :html => { :onsubmit => "$('#submit_button').attr('disabled', true); return true;" } do |f|
+      = f.error_messages
+      %fieldset
+        %div.field
+          = f.label :first, "First Name"
+          = f.text_field :first, :size => 20, :class => "text", :autofocus => @site_configuration.signup_password.blank?
+        %div.field
+          = f.label :last, "Last Name"
+          = f.text_field :last, :size => 20, :class => "text"
+        %div.field
+          = f.label :email, "Email Address"
+          = f.text_field :email, :size => 40, :class => "text"
+        %div.field
+          = f.label :username
+          = f.text_field :username, :size => 20, :class => "text"
+        %div.field
+          = f.label :password
+          = f.password_field :password, :size => 15, :class => "text"
+        %div.field
+          = f.label :password_confirmation, "Retype password"
+          = f.password_field :password_confirmation, :size => 15, :class => "text"
+        %div.buttons
+          = f.submit "Update your profile", :class => "button"
