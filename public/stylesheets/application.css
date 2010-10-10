@@ -375,35 +375,37 @@ body {
     padding-top: 2px;
     margin-right: 5px; }
 
-.post-summary p.title {
-  font-size: 24px;
-  line-height: 36px;
-  color: #555555; }
-  .post-summary p.title span.vote-actions {
-    margin-right: 5px; }
-    .post-summary p.title span.vote-actions img {
-      vertical-align: middle; }
-  .post-summary p.title a:link, .post-summary p.title a:visited, .post-summary p.title a:active {
-    color: #555555;
-    text-decoration: none; }
-  .post-summary p.title a:hover {
-    text-decoration: underline; }
-.post-summary p.byline {
-  font-size: 12px;
-  color: #777777;
-  margin-left: 44px;
-  line-height: 18px; }
-  .post-summary p.byline span.bucket, .post-summary p.byline span.author {
-    margin: 0px 5px;
+.post-summary {
+  margin-bottom: 15px; }
+  .post-summary p.title {
+    font-size: 20px;
+    line-height: 20px;
     color: #555555; }
-  .post-summary p.byline a:link, .post-summary p.byline a:visited, .post-summary p.byline a:active {
-    color: #555555;
-    text-decoration: none; }
-  .post-summary p.byline a:hover {
-    text-decoration: underline; }
-  .post-summary p.byline span.spacer {
-    margin: 0px 5px;
-    color: #cccccc; }
+    .post-summary p.title span.vote-actions {
+      margin-right: 5px; }
+      .post-summary p.title span.vote-actions img {
+        vertical-align: middle; }
+    .post-summary p.title a:link, .post-summary p.title a:visited, .post-summary p.title a:active {
+      color: #555555;
+      text-decoration: none; }
+    .post-summary p.title a:hover {
+      text-decoration: underline; }
+  .post-summary p.byline {
+    font-size: 12px;
+    color: #777777;
+    margin-left: 44px;
+    line-height: 18px; }
+    .post-summary p.byline span.bucket, .post-summary p.byline span.author {
+      margin: 0px 5px;
+      color: #555555; }
+    .post-summary p.byline a:link, .post-summary p.byline a:visited, .post-summary p.byline a:active {
+      color: #555555;
+      text-decoration: none; }
+    .post-summary p.byline a:hover {
+      text-decoration: underline; }
+    .post-summary p.byline span.spacer {
+      margin: 0px 5px;
+      color: #cccccc; }
 
 .breadcrumb {
   font-size: 16px;
@@ -418,3 +420,23 @@ body {
   .breadcrumb img {
     vertical-align: middle;
     margin-right: 10px; }
+
+.bucket-list {
+  list-style: none; }
+  .bucket-list li {
+    font-size: 14px;
+    display: block;
+    border-top: solid 1px #e6e6e6; }
+    .bucket-list li a:link, .bucket-list li a:visited, .bucket-list li a:active {
+      color: #555555;
+      padding: 5px 10px;
+      display: block;
+      text-decoration: none; }
+    .bucket-list li a:hover {
+      text-decoration: underline; }
+    .bucket-list li a:hover {
+      background: #eeeeee; }
+  .bucket-list li.active {
+    font-weight: bold; }
+  .bucket-list li:last-child {
+    border-bottom: solid 1px #e6e6e6; }

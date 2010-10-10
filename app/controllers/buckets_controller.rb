@@ -6,6 +6,7 @@ class BucketsController < ApplicationController
   end
 
   def show
+    @buckets = Bucket.find(:all, :order => "name ASC")
     @bucket = Bucket.find(params[:id])
     @posts = Post.find(:all, :conditions => { :bucket_id => @bucket.id }, :order => "created_at DESC")
   end

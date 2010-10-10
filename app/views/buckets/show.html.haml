@@ -12,4 +12,6 @@
 
   %div.roundedbutton
     = link_to(image_tag("add.png", :size => "16x16")+"Submit a new post", new_bucket_post_url(@bucket))
-    
+  %ul.bucket-list
+    - for bucket in @buckets
+      %li{ :class => "#{ @bucket == bucket ? "active" : ""}"}= link_to bucket.name, bucket
