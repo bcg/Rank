@@ -12,5 +12,8 @@
     %div.buttons
       = f.submit "Post comment", :class => "button", :id => "comment_submit_button"
       
+  :javascript
+    $('#comment_body').focus();
+      
 %div#comments
   = render :partial => "/comments/comment", :collection => @post.comments

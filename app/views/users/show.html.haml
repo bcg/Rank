@@ -25,3 +25,6 @@
           = f.password_field :password_confirmation, :size => 15, :class => "text"
         %div.buttons
           = f.submit "Update your profile", :class => "button"
+
+    :javascript
+      $('#user_first').focus();
