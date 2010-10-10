@@ -386,7 +386,7 @@ body {
   .post-summary div.heading div.title {
     overflow: hidden;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 24px;
     color: #555555; }
     .post-summary div.heading div.title a:link, .post-summary div.heading div.title a:visited, .post-summary div.heading div.title a:active {
       color: #555555;
