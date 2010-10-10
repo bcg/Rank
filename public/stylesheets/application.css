@@ -393,6 +393,12 @@ body {
       text-decoration: none; }
     .post-summary div.heading div.title a:hover {
       text-decoration: underline; }
+    .post-summary div.heading div.title img {
+      margin: 0 5px;
+      vertical-align: baseline; }
+    .post-summary div.heading div.title span.url {
+      font-size: 14px;
+      color: #999999; }
   .post-summary p.byline {
     font-size: 12px;
     color: #777777;

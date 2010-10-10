@@ -19,4 +19,20 @@ class Post < ActiveRecord::Base
   def score
     self.score_counter
   end
+  
+  def safe_url
+    return nil unless is_link?
+    unless url.index("http://") || url.index("https://")
+      return "http://#{url}"
+    else
+      url
+    end
+  end
+  
+  def short_url
+    return nil unless is_link?
+    match = url.match(/(https?\:\/\/[a-z0-9\-\_\.]+)/i)
+    return match[1]
+  end
+  
 end
