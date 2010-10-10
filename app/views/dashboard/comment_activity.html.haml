@@ -1,0 +1,34 @@
+%div.grid_12.alpha
+  %h1 Most recent comments
+  %ul.sort-links
+    %li= link_to "New Posts", dashboard_url
+    %li= link_to "Recently Active Posts", post_activity_url
+    %li= link_to "Recent Comments", comment_activity_url
+  
+  %div#comments
+    - for comment in @comments
+      %div.comment{ :id => "comment_#{comment.id}" }
+        %p.comment-byline
+          %span.vote-actions<
+            = link_to image_tag("up.png", :size => "16x16"), upvote_comment_url(comment), :title => "Up vote this comment", :remote => :true, :method => :post
+            = link_to image_tag("down.png", :size => "16x16"), downvote_comment_url(comment), :title => "Down vote this comment", :remote => :true, :method => :post
+          %span.votes
+            = pluralize(comment.score, "point")
+          %span.spacer= "|"
+          posted by
+          %span.author= comment.author.username
+          to
+          %span.title= link_to comment.post.title, post_url(comment.post, :anchor => "comment_#{comment.id}")
+          %span.spacer= "|"
+          #{time_ago_in_words(comment.created_at)} ago
+          
+        = simple_format(comment.body, :class => "comment-body")
+
+
+      
+%div.grid_4.omega
+  %div.roundedbutton
+    = link_to(image_tag("add.png", :size => "16x16")+"Create a new category", new_bucket_url)
+  %ul.bucket-list
+    - for bucket in @buckets
+      %li= link_to bucket.name, bucket

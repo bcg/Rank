@@ -1,7 +1,17 @@
-body.dashboard-index
+body.dashboard-index, body.dashboard-activity, body.dashboard-comment_activity
   h1
     :font-size 24px
     :line-height 36px
-    :margin-bottom 18px
     :font-weight bold
     :color #555
+  ul.sort-links
+    :border-top solid 1px #EEE
+    :padding-top 3px
+    :margin-bottom 20px
+    :list-style none
+    li
+      :display inline
+      :font-size 12px
+      :margin-right 25px
+      a:link, a:visited, a:active
+        :color #555

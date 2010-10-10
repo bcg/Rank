@@ -38,6 +38,8 @@ Orgg3::Application.routes.draw do
   resources :users
 
   match 'dashboard' => 'dashboard#index', :as => :dashboard
+  match 'dashboard/post_activity' => 'dashboard#activity', :as => :post_activity
+  match 'dashboard/comment_activity' => 'dashboard#comment_activity', :as => :comment_activity
 
   root :to => "user_sessions#new"
 

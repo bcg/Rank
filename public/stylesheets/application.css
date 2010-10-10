@@ -449,3 +449,42 @@ body {
     font-weight: bold; }
   .bucket-list li:last-child {
     border-bottom: solid 1px #e6e6e6; }
+
+.comment {
+  margin-bottom: 18px; }
+  .comment .comment-byline {
+    font-size: 12px;
+    color: #777777;
+    line-height: 18px;
+    margin-bottom: 5px; }
+    .comment .comment-byline span.author {
+      margin: 0px 5px;
+      color: #555555; }
+    .comment .comment-byline span.title {
+      margin: 0px 5px;
+      color: #555555; }
+    .comment .comment-byline span.spacer {
+      margin: 0 5px;
+      color: #cccccc; }
+    .comment .comment-byline span.vote-actions {
+      margin-right: 5px; }
+      .comment .comment-byline span.vote-actions img {
+        vertical-align: middle; }
+    .comment .comment-byline span a:link, .comment .comment-byline span a:visited, .comment .comment-byline span a:active {
+      color: #555555;
+      text-decoration: none; }
+    .comment .comment-byline span a:hover {
+      text-decoration: underline; }
+  .comment .comment-body {
+    font-size: 14px;
+    color: #333333;
+    line-height: 18px;
+    margin-bottom: 18px;
+    margin-left: 40px; }
+  .comment .comment-body:last-child {
+    margin-bottom: 0px; }
+  .comment .reply-link {
+    font-size: 14px;
+    margin-left: 40px; }
+    .comment .reply-link a:link, .comment .reply-link a:visited, .comment .reply-link a:active {
+      color: #333333; }

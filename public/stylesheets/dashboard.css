@@ -1,6 +1,16 @@
-body.dashboard-index h1 {
+body.dashboard-index h1, body.dashboard-activity h1, body.dashboard-comment_activity h1 {
   font-size: 24px;
   line-height: 36px;
-  margin-bottom: 18px;
   font-weight: bold;
   color: #555555; }
+body.dashboard-index ul.sort-links, body.dashboard-activity ul.sort-links, body.dashboard-comment_activity ul.sort-links {
+  border-top: solid 1px #eeeeee;
+  padding-top: 3px;
+  margin-bottom: 20px;
+  list-style: none; }
+  body.dashboard-index ul.sort-links li, body.dashboard-activity ul.sort-links li, body.dashboard-comment_activity ul.sort-links li {
+    display: inline;
+    font-size: 12px;
+    margin-right: 25px; }
+    body.dashboard-index ul.sort-links li a:link, body.dashboard-index ul.sort-links li a:visited, body.dashboard-index ul.sort-links li a:active, body.dashboard-activity ul.sort-links li a:link, body.dashboard-activity ul.sort-links li a:visited, body.dashboard-activity ul.sort-links li a:active, body.dashboard-comment_activity ul.sort-links li a:link, body.dashboard-comment_activity ul.sort-links li a:visited, body.dashboard-comment_activity ul.sort-links li a:active {
+      color: #555555; }
