@@ -87,7 +87,7 @@ body {
     margin-bottom: 18px; }
   #tools p.tools-link {
     text-align: center; }
-    #tools p.tools-link span {
+    #tools p.tools-link span.button {
       display: inline;
       background: #777777;
       background: rgba(0, 0, 0, 0.65);
@@ -102,10 +102,16 @@ body {
       text-decoration: none;
       text-shadow: #333333 2px 2px 2px;
       margin-bottom: 5px; }
-      #tools p.tools-link span a:link, #tools p.tools-link span a:visited, #tools p.tools-link span a:active {
+      #tools p.tools-link span.button a:link, #tools p.tools-link span.button a:visited, #tools p.tools-link span.button a:active {
         color: white;
         text-decoration: none;
         padding: 8px 30px; }
+    #tools p.tools-link span.help-arrow {
+      display: none;
+      position: absolute;
+      top: -55px;
+      left: 510px;
+      z-index: 1000px; }
 
 .login-form {
   padding-top: 50px; }

@@ -34,7 +34,7 @@
               = link_to "submit", new_post_url
               %span
                 = "|"
-              = link_to_function "tools", "$('#tools-container').slideDown('fast');"
+              = link_to_function "tools", "$('#tools-container').slideDown('fast', function() {$('#help-arrow').fadeIn('slow');});"
               %span
                 = "|"
               = link_to "log out", logout_url
@@ -48,13 +48,15 @@
           %div#tools
             %p.tools-title 
               %span.close
-                = link_to_function "hide tools", "$('#tools-container').slideUp('fast');"
+                = link_to_function "hide tools", "$('#help-arrow').hide(); $('#tools-container').slideUp('fast');"
               Install the browser bookmarklet
             %p.tools-description
-              Drag and drop the link to your browser bookmark bar for easy posting.
+              Drag and drop the button to your browser bookmark bar.
             %p.tools-link
               %span.button
                 = render :partial => "/bookmarklet/bookmarklet"
+              %span#help-arrow.help-arrow{ :style => "display:none" }
+                =image_tag("bookmarklet-arrow.png")
 
       %div.grid_16
         = yield
