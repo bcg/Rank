@@ -1,14 +1,14 @@
 %div.post-summary{ :id => "post_#{post.id}" }
-  %p.title
-    %span.vote-actions<
+  %div.heading
+    %div.vote-actions<
       = link_to image_tag("up.png", :size => "16x16"), upvote_post_url(post), :remote => true, :method => :post, :title => "Up vote this post"
       = link_to image_tag("down.png", :size => "16x16"), downvote_post_url(post), :remote => true, :method => :post, :title => "Down vote this post"
-
-    - if post.is_link?
-      = link_to post.title, post.url, :target => "_blank"
-      = image_tag("link.png")
-    - else
-      = link_to post.title, post_url(post)
+    %div.title
+      - if post.is_link?
+        = image_tag("link.png")
+        = link_to post.title, post.url, :target => "_blank"
+      - else
+        = link_to post.title, post_url(post)
   %p.byline
     %span.votes
       #{pluralize(post.score, "point")}

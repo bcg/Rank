@@ -377,18 +377,21 @@ body {
 
 .post-summary {
   margin-bottom: 15px; }
-  .post-summary p.title {
-    font-size: 20px;
-    line-height: 20px;
+  .post-summary div.heading div.vote-actions {
+    float: left;
+    margin-right: 10px;
+    padding-top: 2px; }
+    .post-summary div.heading div.vote-actions img {
+      vertical-align: middle; }
+  .post-summary div.heading div.title {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 18px;
     color: #555555; }
-    .post-summary p.title span.vote-actions {
-      margin-right: 5px; }
-      .post-summary p.title span.vote-actions img {
-        vertical-align: middle; }
-    .post-summary p.title a:link, .post-summary p.title a:visited, .post-summary p.title a:active {
+    .post-summary div.heading div.title a:link, .post-summary div.heading div.title a:visited, .post-summary div.heading div.title a:active {
       color: #555555;
       text-decoration: none; }
-    .post-summary p.title a:hover {
+    .post-summary div.heading div.title a:hover {
       text-decoration: underline; }
   .post-summary p.byline {
     font-size: 12px;
