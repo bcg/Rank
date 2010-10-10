@@ -1,0 +1,8 @@
+<% if @comment.valid? %>
+$('#reply_<%= @comment.parent.id %>').remove();
+$('#replies_<%= @comment.parent.id %>').prepend('<%= escape_javascript(render(@comment)) %>');
+$('#comment_<%= @comment.id %>').fadeIn('slow');
+<% else %>
+  alert('<%= @comment.errors.full_messages.first %>');
+  $('#comment_submit_button').attr('disabled', false);
+<% end %>

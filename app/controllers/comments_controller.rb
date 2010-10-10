@@ -8,6 +8,17 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.save
   end
+  
+  def reply
+    orig_comment = Comment.find(params[:id])
+    orig_post = orig_comment.post
+    
+    @comment = Comment.new(params[:comment])
+    @comment.post = orig_post
+    @comment.author = current_user
+    @comment.parent = orig_comment
+    @comment.save
+  end
 
   def upvote
     @comment = Comment.find(params[:id])

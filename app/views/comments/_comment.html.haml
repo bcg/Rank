@@ -10,3 +10,14 @@
     %span.author= comment.author.username
     #{time_ago_in_words(comment.created_at)} ago
   = simple_format(comment.body, :class => "comment-body")
+  %div.reply-link{ :id => "reply_#{comment.id}" }
+    = link_to_function "reply", "$('#reply_form_#{comment.id}').show(); $('#reply_form_#{comment.id} .text').focus();"
+    %div.reply-comment-form{ :id => "reply_form_#{comment.id}", :style => "display:none" }
+      = form_for :comment, Comment.new, :url => reply_comment_url(comment), :remote => true, :html => { :onsubmit => "$('#reply_button_#{comment.id}').attr('disabled', true); return true;" } do |f|
+        %fieldset
+          %div.field
+            = f.text_area :body, :class => "text", :rows => 8, :cols => 80
+          %div.buttons
+            = f.submit "Post reply", :id => "reply_button_#{comment.id}", :class => "button"
+  %div.comment-replies{ :id => "replies_#{comment.id}"}
+    = render :partial => "/comments/comment", :collection => comment.replies

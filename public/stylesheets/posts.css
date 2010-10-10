@@ -26,12 +26,12 @@ body.posts-show .post-body {
   color: #333333;
   line-height: 18px;
   margin-bottom: 18px;
-  margin-left: 44px; }
+  margin-left: 40px; }
 body.posts-show .post-body:last-child {
   margin-bottom: 0px; }
 body.posts-show .post-comment-form {
   margin-top: 20px;
-  margin-left: 44px; }
+  margin-left: 37px; }
   body.posts-show .post-comment-form form .field {
     clear: both;
     margin-bottom: 5px; }
@@ -43,7 +43,8 @@ body.posts-show .post-comment-form {
       color: #555555;
       font-family: Rockwell, Helvetica, Arial, sans-serif; }
   body.posts-show .post-comment-form form .buttons {
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-left: 3px; }
 body.posts-show #comments {
   margin-top: 25px; }
 body.posts-show .comment {
@@ -71,3 +72,28 @@ body.posts-show .comment {
     margin-left: 40px; }
   body.posts-show .comment .comment-body:last-child {
     margin-bottom: 0px; }
+  body.posts-show .comment .reply-link {
+    font-size: 14px;
+    margin-left: 40px; }
+    body.posts-show .comment .reply-link a:link, body.posts-show .comment .reply-link a:visited, body.posts-show .comment .reply-link a:active {
+      color: #333333; }
+body.posts-show .comment-replies {
+  border-left: solid 3px #aaaaaa;
+  padding-left: 12px;
+  margin-left: 25px;
+  margin-top: 15px; }
+body.posts-show .reply-comment-form {
+  margin-top: 20px; }
+  body.posts-show .reply-comment-form form .field {
+    clear: both;
+    margin-bottom: 5px; }
+    body.posts-show .reply-comment-form form .field textarea.text {
+      margin: 3px;
+      padding: 3px;
+      font-size: 14px;
+      line-height: 18px;
+      color: #555555;
+      font-family: Rockwell, Helvetica, Arial, sans-serif; }
+  body.posts-show .reply-comment-form form .buttons {
+    margin-top: 10px;
+    margin-left: 3px; }

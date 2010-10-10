@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101010194558) do
+ActiveRecord::Schema.define(:version => 20101010213741) do
 
   create_table "bucket_permissions", :force => true do |t|
     t.integer  "bucket_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20101010194558) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "score_counter", :default => 0
+    t.integer  "parent_id"
   end
 
   create_table "posts", :force => true do |t|

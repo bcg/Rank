@@ -9,6 +9,7 @@ Orgg3::Application.routes.draw do
     member do
       post 'upvote'
       post 'downvote'
+      post 'reply'
     end
   end
 

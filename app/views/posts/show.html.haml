@@ -16,4 +16,4 @@
     $('#comment_body').focus();
       
 %div#comments
-  = render :partial => "/comments/comment", :collection => @post.comments
+  = render :partial => "/comments/comment", :collection => @post.comments.original
