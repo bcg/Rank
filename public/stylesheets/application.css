@@ -496,3 +496,24 @@ body {
     margin-left: 40px; }
     .comment .reply-link a:link, .comment .reply-link a:visited, .comment .reply-link a:active {
       color: #333333; }
+
+.footer {
+  padding-top: 20px;
+  border-top: solid 1px #d6d6d6;
+  overflow: hidden;
+  padding-bottom: 25px; }
+
+.footer-section h2 {
+  font-size: 16px;
+  color: #555555;
+  line-height: 18px; }
+.footer-section ul {
+  list-style: none; }
+  .footer-section ul li {
+    font-size: 14px;
+    color: #555555; }
+    .footer-section ul li a:link, .footer-section ul li a:visited, .footer-section ul li a:active {
+      color: #555555;
+      text-decoration: none; }
+    .footer-section ul li a:hover {
+      text-decoration: underline; }

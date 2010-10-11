@@ -5,6 +5,8 @@ Orgg3::Application.routes.draw do
   # match 'bookmarklet' => "bookmarklet#show", :as => :bookmarklet
   # match 'bookmarklet/new' => "bookmarklet#new", :as => :new_bookmarklet
 
+  match 'rss' => "rss_feed#index", :as => "rss"
+
   resources :comments do
     member do
       post 'upvote'

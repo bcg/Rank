@@ -62,7 +62,7 @@
         = yield
 
       %div.grid_16
-        %div#footer.footer
+        = render :partial => "/layouts/footer"
 
     - if @site_configuration.google_analytics
       - if Rails.env == 'production'

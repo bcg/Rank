@@ -1,0 +1,17 @@
+!!! XML
+%rss{:version=>"2.0"}
+  %channel
+    %link= root_url
+    %title= @site_configuration.display_name
+    %description
+    %language en-us
+
+    - @posts.each do |p|
+      %item
+        %pubDate=p.created_at.strftime('%a, %d %b %Y %H:%M:%S %z')
+        %guid= post_url(p)
+        %link= post_url(p)
+        %title= p.title
+        %description
+          :escaped
+            = simple_format(p.body)

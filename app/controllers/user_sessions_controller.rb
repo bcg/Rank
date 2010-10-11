@@ -1,4 +1,7 @@
 class UserSessionsController < ApplicationController
+  def single_access_allowed?
+    return false
+  end
   
   def new
     if logged_in?

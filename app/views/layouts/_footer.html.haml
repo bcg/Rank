@@ -1,0 +1,17 @@
+%div#footer.footer
+  %div.grid_4.prefix_2.alpha
+    %div.footer-section
+      %ul
+        %li= link_to "RSS Feed", rss_url(:format => :xml, :token => current_user.single_access_token)
+        %li
+          Creative Commons Attributions  
+
+  %div.grid_4
+    %div.footer-section
+      &nbsp;
+  %div.grid_4.suffix_2.omega
+    %div.footer-section
+      %ul
+        %li
+          &copy 2010 -
+          = link_to "www.codestorming.com", "http://www.codestorming.com", :target => "_blank"
