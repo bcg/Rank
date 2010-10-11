@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./script/rstakeout "./script/cucumber $*" "app/**/*.rb" "features/**/*" "app/**/*.html.haml"

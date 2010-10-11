@@ -11,6 +11,10 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
+    when /^the rss feed using the token for "([^"]*)"$/
+      user = User.find_by_username($1)
+      rss_url(:format => "xml", :token => user.single_access_token)
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
