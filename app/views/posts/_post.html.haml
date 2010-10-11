@@ -1,4 +1,4 @@
-%div.post-summary{ :id => "post_#{post.id}" }
+%div.post-summary{ :id => "post_#{post.id}", :class => "#{defined?(include_body) and include_body ? 'with-body' : ''}" }
   %div.heading
     %div.vote-actions<
       = link_to image_tag("up.png", :size => "16x16"), upvote_post_url(post), :remote => true, :method => :post, :title => "Up vote this post"
@@ -26,3 +26,5 @@
       = link_to(pluralize(post.comments.size, "comment"), "##{comment_link_anchor}")
     - else
       = link_to(pluralize(post.comments.size, "comment"), post_url(post))
+  - if defined?(include_body) and include_body
+    = simple_format(@post.body, :class => "post-body")
