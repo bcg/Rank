@@ -1,7 +1,10 @@
 namespace :orgg3 do
   desc "Update last activity at"
   task :last_activity_update => :environment do
-    Post.all do |post|
+    logger = Rails.logger
+    logger.info("# of posts: #{Post.count}")
+    posts = Post.find(:all)
+    for post in posts
       if post.comments.empty?
         logger.info("Post has no comments")
         post.last_activity_at = post.created_at 
