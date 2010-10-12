@@ -505,6 +505,7 @@ body {
       color: #333333; }
 
 .footer {
+  margin-top: 100px;
   padding-top: 20px;
   border-top: solid 1px #d6d6d6;
   overflow: hidden;
