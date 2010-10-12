@@ -2,7 +2,8 @@
   %div.grid_4.prefix_2.alpha
     %div.footer-section
       %ul
-        %li= link_to "RSS Feed", rss_url(:format => :xml, :token => current_user.single_access_token)
+        - if current_user
+          %li= link_to "RSS Feed", rss_url(:format => :xml, :token => current_user.single_access_token)
         %li
           Creative Commons Attributions  
 

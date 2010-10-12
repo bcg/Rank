@@ -34,6 +34,6 @@ group :test, :cucumber do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber', '0.9.2'
-  gem 'rspec-rails', '>= 2.0.0.beta.10'
+  gem 'rspec-rails', '>= 2.0.0'
   gem 'factory_girl_rails'
 end

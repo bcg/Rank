@@ -11,6 +11,9 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
+    when /^the dashboard$/
+      dashboard_url
+
     when /^the rss feed using the token for "([^"]*)"$/
       user = User.find_by_username($1)
       rss_url(:format => "xml", :token => user.single_access_token)

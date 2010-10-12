@@ -44,20 +44,26 @@
                 or
               = link_to "create an account", signup_url
       - if current_user
-        %div#tools-container.grid_12.prefix_2.suffix_2.alpha.omega{ :style => "display:none" }
-          %div#tools
+        %div#tools-container.grid_12.prefix_2.suffix_2.alpha.omega{ :style => 'display:none' }
+          %div#tools{ :class => "#{current_user.bookmarklet_installed? ? '' : 'auto-tools'}" }
             %p.tools-title 
               %span.close
                 = link_to_function "hide tools", "$('#help-arrow').hide(); $('#tools-container').slideUp('fast');"
-              Install the browser bookmarklet
+              Make posting easy
             %p.tools-description
               Drag and drop the button to your browser's toolbar.
+              
             %p.tools-link
               %span.button
                 = render :partial => "/bookmarklet/bookmarklet"
               %span#help-arrow.help-arrow{ :style => "display:none" }
                 =image_tag("bookmarklet-arrow.png")
-
+            - unless current_user.bookmarklet_installed
+              :javascript
+                $('#tools-container').slideDown('fast', function() {$('#help-arrow').fadeIn('slow');});
+              %p.tools-description
+                = link_to "Click here", install_flag_bookmarklet_url(), :remote => true, :method => :post
+                to hide this message.
       %div.grid_16
         = yield
 

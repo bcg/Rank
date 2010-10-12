@@ -1,9 +1,11 @@
 Orgg3::Application.routes.draw do
 
   # resource :site_configuration
-  resource :bookmarklet, :controller => "bookmarklet"
-  # match 'bookmarklet' => "bookmarklet#show", :as => :bookmarklet
-  # match 'bookmarklet/new' => "bookmarklet#new", :as => :new_bookmarklet
+  resource :bookmarklet, :controller => "bookmarklet" do
+    member do
+      post 'install_flag'
+    end
+  end
 
   match 'rss' => "rss_feed#index", :as => "rss"
 

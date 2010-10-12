@@ -26,5 +26,9 @@ class BookmarkletController < ApplicationController
     @post.save
   rescue
   end
+  
+  def install_flag
+    current_user.update_attribute(:bookmarklet_installed, true)
+  end
 
 end
