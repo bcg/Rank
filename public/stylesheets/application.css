@@ -36,6 +36,10 @@ body {
   background: rgba(0, 0, 0, 0.8);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
   color: white;
   margin-bottom: 10px;
   overflow: hidden; }
