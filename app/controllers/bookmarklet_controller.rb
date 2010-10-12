@@ -24,6 +24,7 @@ class BookmarkletController < ApplicationController
     @post = Post.new(params[:post])
     @post.author = current_user
     @post.save
+    current_user.update_attribute(:bookmarklet_installed, true)
   rescue
   end
   
