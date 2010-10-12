@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101012043955) do
+ActiveRecord::Schema.define(:version => 20101012061418) do
 
   create_table "bucket_permissions", :force => true do |t|
     t.integer  "bucket_id"
@@ -67,6 +67,10 @@ ActiveRecord::Schema.define(:version => 20101012043955) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "google_analytics"
+    t.string   "short_name"
+    t.text     "site_description"
+    t.string   "home_url"
+    t.boolean  "private_site",     :default => false
   end
 
   create_table "users", :force => true do |t|

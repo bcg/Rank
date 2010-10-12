@@ -1,9 +1,9 @@
 !!! XML
 %rss{:version=>"2.0"}
   %channel
-    %link= root_url
+    %link= @site_configuration.home_url
     %title= @site_configuration.display_name
-    %description
+    %description=h @site_configuration.site_description
     %language en-us
 
     - @posts.each do |p|
