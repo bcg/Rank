@@ -47,3 +47,5 @@ module Orgg3
     end
   end
 end
+
+Sass::Plugin.options[:template_location] = [["#{RAILS_ROOT}/public/stylesheets/sass", "#{RAILS_ROOT}/public/stylesheets"], ["#{RAILS_ROOT}/public/stylesheets/admin/sass", "#{RAILS_ROOT}/public/stylesheets/admin"]]

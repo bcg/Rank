@@ -305,11 +305,16 @@ body {
     font-family: Rockwell, Helvetica, Arial, sans-serif; }
 .simple-form form .field.padforselect label {
   padding-top: 0px; }
+.simple-form form .field.padforcheckbox {
+  margin-top: 10px; }
+  .simple-form form .field.padforcheckbox label {
+    padding-top: 0px; }
 .simple-form form .field_with_errors {
   display: inline; }
   .simple-form form .field_with_errors .text {
     background: #ffe6e6; }
 .simple-form form .buttons {
+  clear: both;
   margin-top: 10px; }
   .simple-form form .buttons .button {
     margin-left: 103px; }

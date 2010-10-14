@@ -1,0 +1,38 @@
+!!! 5
+%html
+  %head
+    %title #{@site_configuration.display_name}
+    = stylesheet_link_tag "reset", "960", "application", "admin/application", "admin/#{controller.controller_name}"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
+    = javascript_include_tag 'rails', 'application'
+    = csrf_meta_tag
+    
+    :javascript
+      $(document).ready(function(){ 
+        $('.flash').animate({opacity:1}, 500).fadeIn('fast').animate({opacity:1.0}, 2500).fadeOut('slow');
+      });
+      
+
+  %body{ :class => "#{controller.controller_name}-#{controller.action_name}" }
+    - unless flash.empty?
+      %div#flash.flash{ :style => "display: none", :class => "#{flash.keys.first}" }
+        = image_tag("flash_#{flash.keys.first}.png", :size => "48x48")
+        =h flash[flash.keys.first]
+    %div.container_16
+      %div#header-bar
+        %div.grid_6
+          %div.logo
+            = link_to @site_configuration.display_name, dashboard_url
+        %div.grid_10
+          %div#user-nav.user-nav
+            %span
+              logged in as
+            = link_to current_user.username, user_url(:current)
+            %span
+              = "|"
+            = link_to "log out", logout_url
+      %div.grid_16
+        = yield
+
+      %div.grid_16
+        = render :partial => "/layouts/footer"

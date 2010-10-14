@@ -11,7 +11,7 @@
         %fieldset
           %div.field.padforselect
             = f.label :bucket_id, "Category"
-            = f.select :bucket_id, options_for_buckets(@buckets, f.object.bucket_id)
+            = f.select :bucket_id, options_for_buckets(@buckets, @site_configuration.default_bucket_id)
           %div.field
             = f.label :title
             = f.text_field :title, :size => 50, :class => "text", :autofocus => true

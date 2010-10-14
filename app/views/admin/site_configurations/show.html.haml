@@ -1,0 +1,32 @@
+%div.simple-form
+  %h1 Site Configuration Options
+  
+  = form_for @site_configuration, :url => admin_site_configuration_url() do |f|
+    = f.error_messages
+    %fieldset
+      %div.field
+        = f.label :display_name, "Site Name"
+        = f.text_field :display_name, :class => "text", :size => 40, :autofocus => true
+      %div.field
+        = f.label :short_name, "Short Name"
+        = f.text_field :short_name, :class => "text", :size => 20, :maxlength => 20
+      %div.field
+        = f.label :site_description, "Site Description"
+        = f.text_area :site_description, :class => "text", :rows => 6, :cols => 65
+      %div.field
+        = f.label :signup_password, "Signup Password"
+        = f.text_field :signup_password, :class => "text", :size => 15
+      %div.field
+        = f.label :google_analytics, "Google Analytics ID"
+        = f.text_field :google_analytics, :class => "text", :size => 15
+      %div.field
+        = f.label :home_url, "Root URL"
+        = f.text_field :home_url, :class => "text", :size => 40
+      %div.field.padforcheckbox
+        = f.label :private_site, "Private Community"
+        = f.check_box :private_site
+      %div.field.padforselect
+        = f.label :default_bucket_id, "Default Category"
+        = f.select :default_bucket_id, options_for_buckets(@buckets, f.object.default_bucket_id)
+      %div.buttons
+        = f.submit "Save settings", :class => "button"

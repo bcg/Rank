@@ -45,6 +45,10 @@ Orgg3::Application.routes.draw do
   match 'dashboard/post_activity' => 'dashboard#activity', :as => :post_activity
   match 'dashboard/comment_activity' => 'dashboard#comment_activity', :as => :comment_activity
 
+  namespace :admin do
+    resource :site_configuration
+  end
+
   root :to => "user_sessions#new"
 
   # The priority is based upon order of creation:

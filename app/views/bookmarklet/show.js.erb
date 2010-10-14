@@ -40,10 +40,12 @@ function showHUD() {
   div.style.border = 'solid 5px #315270';
   div.style.textAlign = 'left';
   div.style.font = '14px Rockwell, Helvetica, Arial';
+  div.style.borderRadius = '10px';
   div.style.MozBorderRadius = '10px';
   div.style.WebkitBorderRadius = '10px';
-  div.style.WebkitBoxShadow = '0px 0px 20px rgba(0,0,0,.5)';
+  div.style.boxShadow = '0px 0px 20px rgba(0,0,0,.5)';
   div.style.MozBoxShadow = '0px 0px 20px rgba(0,0,0,.5)';  
+  div.style.WebkitBoxShadow = '0px 0px 20px rgba(0,0,0,.5)';
   div.innerHTML = "<p style=\"font:16px Rockwell, Helvetica, Arial;font-weight:bold;color:#315270;line-height:12px;margin:10px 10px 5px 10px;\"><span style=\"float:right;font-weight:normal;padding-right:2px;\"><a href=\"\" onclick=\"$jq('#orgg_popup_hud').fadeOut('fast', function(){$jq('#orgg_popup_hud').remove();});return false;\" style=\"font-size:14px;color:#F00;text-decoration:underline;border:0;\">close</a></span><%= @site_configuration.display_name %></p><iframe src=\"<%= new_bookmarklet_url(:title => @post.title, :url => @post.url, :token => current_user.single_access_token)%>\" style=\"margin: 10px;width:600px;height:200px;border:0;scrolling:no;\" />";
   b.appendChild(div);
     
