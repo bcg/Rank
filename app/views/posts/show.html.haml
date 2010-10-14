@@ -3,15 +3,16 @@
   = link_to "#{@post.bucket.name}", bucket_url(@post.bucket)
 = render :partial => "post", :locals => { :post => @post, :comment_link_anchor => "comments", :include_body => true }
   
-%div.post-comment-form
-  = form_for :comment, @comment, :url => post_comments_url(@post), :remote => true, :html => { :onsubmit => "$('#comment_submit_button').attr('disabled', true); return true;" } do |f|
-    %div.field
-      = f.text_area :body, :class => "text", :rows => 8, :cols => 80
-    %div.buttons
-      = f.submit "Post comment", :class => "button", :id => "comment_submit_button"
+- if logged_in?
+  %div.post-comment-form
+    = form_for :comment, @comment, :url => post_comments_url(@post), :remote => true, :html => { :onsubmit => "$('#comment_submit_button').attr('disabled', true); return true;" } do |f|
+      %div.field
+        = f.text_area :body, :class => "text", :rows => 8, :cols => 80
+      %div.buttons
+        = f.submit "Post comment", :class => "button", :id => "comment_submit_button"
       
-  :javascript
-    $('#comment_body').focus();
+    :javascript
+      $('#comment_body').focus();
       
 %div#comments
   = render :partial => "/comments/comment", :collection => @post.comments.original
