@@ -4,7 +4,7 @@
       %ul
         - if !@site_configuration.private_site or current_user
           - unless @site_configuration.private_site
-            - unless @site_configuration.alternate_rss_url.blank?
+            - if @site_configuration.alternate_rss_url.blank?
               %li= link_to "RSS Feed", rss_url(:format => :xml)
             - else
               %li= link_to "RSS Feed", alternate_rss_url
