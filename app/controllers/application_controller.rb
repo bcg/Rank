@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   
   private
   
-  def load_site
+  def load_account
     @current_account = Account.first
   end
   
