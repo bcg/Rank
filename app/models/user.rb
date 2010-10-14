@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
+
   acts_as_authentic
+  belongs_to :account
+  validates_presence_of :account
+  
   has_many :bucket_permissions, :class_name => "BucketPermissions", :dependent => :destroy
   
   def buckets

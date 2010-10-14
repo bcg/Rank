@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101014004715) do
+ActiveRecord::Schema.define(:version => 20101014011850) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "name"
+    t.string   "cname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bucket_permissions", :force => true do |t|
     t.integer  "bucket_id"
@@ -27,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20101014004715) do
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "account_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -37,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20101014004715) do
     t.datetime "updated_at"
     t.integer  "score_counter", :default => 0
     t.integer  "parent_id"
+    t.integer  "account_id"
   end
 
   create_table "posts", :force => true do |t|
@@ -49,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20101014004715) do
     t.datetime "updated_at"
     t.integer  "score_counter",    :default => 0
     t.datetime "last_activity_at"
+    t.integer  "account_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -72,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20101014004715) do
     t.string   "home_url"
     t.boolean  "private_site",      :default => false
     t.integer  "default_bucket_id"
+    t.integer  "account_id"
   end
 
   create_table "users", :force => true do |t|
@@ -90,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20101014004715) do
     t.datetime "updated_at"
     t.string   "single_access_token"
     t.boolean  "bookmarklet_installed", :default => false
+    t.integer  "account_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
