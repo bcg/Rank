@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
   private
   
   def load_account
-    @current_account = Account.first
+    @current_account = Account.find_by_cname(request.host)
   end
   
   def load_site_configuration
-    @site_configuration = SiteConfiguration.first
+    @site_configuration = @current_account.site_configuration
     if @site_configuration.nil?
       @site_configuration = SiteConfiguration.new
       @site_configuration.display_name = "Unconfigured System"
