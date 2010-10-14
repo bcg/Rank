@@ -48,4 +48,4 @@ module Orgg3
   end
 end
 
-Sass::Plugin.options[:template_location] = [["#{RAILS_ROOT}/public/stylesheets/sass", "#{RAILS_ROOT}/public/stylesheets"], ["#{RAILS_ROOT}/public/stylesheets/admin/sass", "#{RAILS_ROOT}/public/stylesheets/admin"]]
+Sass::Plugin.options[:template_location] = [["#{Rails.root.to_s}/public/stylesheets/sass", "#{Rails.root.to_s}/public/stylesheets"], ["#{Rails.root.to_s}/public/stylesheets/admin/sass", "#{Rails.root.to_s}/public/stylesheets/admin"]]
