@@ -1,10 +1,15 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :logged_in?
+  before_filter :load_account
   before_filter :load_site_configuration
 
   protect_from_forgery 
   
   private
+  
+  def load_site
+    @current_account = Account.first
+  end
   
   def load_site_configuration
     @site_configuration = SiteConfiguration.first

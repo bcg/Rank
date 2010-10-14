@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.post = @post
     @comment.author = current_user
+    @comment.account = @current_account
     @comment.save
   end
   
@@ -17,6 +18,7 @@ class CommentsController < ApplicationController
     @comment.post = orig_post
     @comment.author = current_user
     @comment.parent = orig_comment
+    @comment.account = @current_account
     @comment.save
   end
 

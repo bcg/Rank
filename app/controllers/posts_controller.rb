@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @buckets = Bucket.find(:all, :order => "name ASC")
     @post = Post.new(params[:post])
     @post.author = current_user
+    @post.account = @current_account
     if @post.save
       flash[:notice] = "Successfully saved your post to #{@post.bucket.name}."
       redirect_to @post

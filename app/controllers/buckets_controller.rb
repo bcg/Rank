@@ -18,6 +18,7 @@ class BucketsController < ApplicationController
   def create
     @bucket = Bucket.new(params[:bucket])
     @bucket.owner = current_user
+    @bucket.account = @current_account
     if @bucket.save
       flash[:notice] = "Your new category has been created."
       redirect_to @bucket
