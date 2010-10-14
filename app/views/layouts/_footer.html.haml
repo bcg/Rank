@@ -7,7 +7,7 @@
             - if @site_configuration.alternate_rss_url.blank?
               %li= link_to "RSS Feed", rss_url(:format => :xml)
             - else
-              %li= link_to "RSS Feed", alternate_rss_url
+              %li= link_to "RSS Feed", @site_configuration.alternate_rss_url
           - else
             %li= link_to "RSS Feed", rss_url(:format => :xml, :token => current_user.single_access_token)
         %li
