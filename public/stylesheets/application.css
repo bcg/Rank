@@ -505,6 +505,10 @@ body {
     line-height: 18px;
     margin-bottom: 18px;
     margin-left: 40px; }
+    .comment .comment-body a:link, .comment .comment-body a:active {
+      color: blue; }
+    .comment .comment-body a:visited {
+      color: #555555; }
   .comment .comment-body:last-child {
     margin-bottom: 0px; }
   .comment .reply-link {

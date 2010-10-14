@@ -27,4 +27,4 @@
     - else
       = link_to(pluralize(post.comments.size, "comment"), post_url(post))
   - if defined?(include_body) and include_body
-    = simple_format(@post.body, :class => "post-body")
+    = safely_formatted_text(@post.body, "post-body")
