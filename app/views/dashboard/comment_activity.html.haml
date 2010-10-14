@@ -22,7 +22,7 @@
           %span.spacer= "|"
           #{time_ago_in_words(comment.created_at)} ago
           
-        = simple_format(comment.body, :class => "comment-body")
+        = safely_formatted_text(comment.body, "comment-body")
       
 %div.grid_4.omega
   %h2 Categories
