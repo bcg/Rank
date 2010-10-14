@@ -13,7 +13,7 @@ class BookmarkletController < ApplicationController
   end
 
   def new
-    @buckets = Bucket.find(:all, :order => "name ASC")
+    @buckets = current_account.buckets.find(:all, :order => "name ASC")
     @post = Post.new
     title = params[:title] ? params[:title].gsub(/[\n|\t]/, " ") : ''
     @post.title = title.gsub(/[\s]+/, " ").strip
@@ -23,6 +23,7 @@ class BookmarkletController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.author = current_user
+    @post.account = current_account
     @post.save
     current_user.update_attribute(:bookmarklet_installed, true)
   rescue
