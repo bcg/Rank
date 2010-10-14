@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def load_account
     @current_account = Account.find_by_cname(request.host)
     if @current_account.nil?
-      @current_account = Account.find_by_cname("www.#{request.host}")
+      @current_account = Account.find_by_cname(request.host.gsub("www\.", ""))
     end
   end
   
