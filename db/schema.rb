@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101014011850) do
+ActiveRecord::Schema.define(:version => 20101014160457) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20101014011850) do
     t.boolean  "private_site",      :default => false
     t.integer  "default_bucket_id"
     t.integer  "account_id"
+    t.string   "alternate_rss_url"
   end
 
   create_table "users", :force => true do |t|

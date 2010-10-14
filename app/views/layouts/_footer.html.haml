@@ -6,6 +6,9 @@
           - unless @site_configuration.private_site
             %li= link_to "RSS Feed", rss_url(:format => :xml)
           - else
+            - unless @site_configuration.alternate_rss_url.blank?
+              %li= link_to "RSS Feed", alternate_rss_url
+            - else
             %li= link_to "RSS Feed", rss_url(:format => :xml, :token => current_user.single_access_token)
         %li
           Creative Commons Attributions  

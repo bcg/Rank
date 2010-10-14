@@ -22,6 +22,9 @@
       %div.field
         = f.label :home_url, "Root URL"
         = f.text_field :home_url, :class => "text", :size => 40
+      %div.field
+        = f.label :alternate_rss_url, "Feedburner URL"
+        = f.text_field :alternate_rss_url, :class => "text", :size => 40
       %div.field.padforcheckbox
         = f.label :private_site, "Private Community"
         = f.check_box :private_site
