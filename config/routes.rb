@@ -49,7 +49,7 @@ Orgg3::Application.routes.draw do
     resource :site_configuration
   end
 
-  root :to => "user_sessions#new"
+  root :to => "dashboard#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
