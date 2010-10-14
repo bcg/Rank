@@ -1,5 +1,5 @@
 %div.grid_12.alpha
-  %h1 Most recent comments
+  %h1 Recent comments
   %ul.sort-links
     %li= link_to "New Posts", dashboard_url
     %li= link_to "Recently Active Posts", post_activity_url
@@ -23,12 +23,12 @@
           #{time_ago_in_words(comment.created_at)} ago
           
         = simple_format(comment.body, :class => "comment-body")
-
-
       
 %div.grid_4.omega
-  %div.roundedbutton
-    = link_to(image_tag("add.png", :size => "16x16")+"Create a new category", new_bucket_url)
+  %h2 Categories
+  - if current_user
+    %div.roundedbutton
+      = link_to(image_tag("add.png", :size => "16x16")+"Create a new category", new_bucket_url)
   %ul.bucket-list
     - for bucket in @buckets
       %li= link_to bucket.name, bucket

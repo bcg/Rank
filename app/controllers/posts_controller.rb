@@ -1,22 +1,23 @@
 class PostsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required_if_private, :only => [ :show ]
+  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy, :upvote, :downvote ]
   
   def show
-    @post = Post.find(params[:id])
+    @post = current_account.posts.find(params[:id])
   end
   
   def new
-    @bucket = Bucket.find(params[:bucket_id]) if params[:bucket_id]
-    @buckets = Bucket.find(:all, :order => "name ASC")
+    @bucket = current_account.buckets.find(params[:bucket_id]) if params[:bucket_id]
+    @buckets = current_account.buckets.find(:all, :order => "name ASC")
     @post = Post.new
     @post.bucket = @bucket
   end
   
   def create
-    @buckets = Bucket.find(:all, :order => "name ASC")
+    @buckets = current_account.buckets.find(:all, :order => "name ASC")
     @post = Post.new(params[:post])
     @post.author = current_user
-    @post.account = @current_account
+    @post.account = current_account
     if @post.save
       flash[:notice] = "Successfully saved your post to #{@post.bucket.name}."
       redirect_to @post
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post = Post.find(params[:id])
+    @post = current_account.posts.find(params[:id])
     prev = Vote.find(:first, :conditions => {:voter_id => current_user.id, :post_id => @post.id})
     if prev.nil?
       vote = Vote.new
@@ -42,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def downvote
-    @post = Post.find(params[:id])
+    @post = current_account.posts.find(params[:id])
     prev = Vote.find(:first, :conditions => {:voter_id => current_user.id, :post_id => @post.id})
     if prev.nil?
       vote = Vote.new

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  before_filter :login_required, :only => [ :show ]
   def show
     @user = current_user
   end
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    @user.account = @current_account
+    @user.account = current_account
     unless @site_configuration.signup_password.blank?
       if @site_configuration.signup_password != params[:registration_code]
         @user.errors.add(:base, "Signup registration code is not correct.")

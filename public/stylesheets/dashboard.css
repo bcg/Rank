@@ -3,6 +3,13 @@ body.dashboard-index h1, body.dashboard-activity h1, body.dashboard-comment_acti
   line-height: 36px;
   font-weight: bold;
   color: #555555; }
+body.dashboard-index h2, body.dashboard-activity h2, body.dashboard-comment_activity h2 {
+  padding-top: 13px;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555555; }
 body.dashboard-index ul.sort-links, body.dashboard-activity ul.sort-links, body.dashboard-comment_activity ul.sort-links {
   border-top: solid 1px #eeeeee;
   padding-top: 3px;

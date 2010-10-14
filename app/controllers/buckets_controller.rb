@@ -1,14 +1,15 @@
 class BucketsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required_if_private, :only => [ :index, :show ]
+  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy, :join ]
 
   def index
-    @buckets = Bucket.find(:all)
+    @buckets = current_account.buckets.find(:all)
   end
 
   def show
-    @buckets = Bucket.find(:all, :order => "name ASC")
-    @bucket = Bucket.find(params[:id])
-    @posts = Post.find(:all, :conditions => { :bucket_id => @bucket.id }, :order => "created_at DESC")
+    @buckets = current_account.buckets.find(:all, :order => "name ASC")
+    @bucket = current_account.buckets.find(params[:id])
+    @posts = current_account.posts.find(:all, :conditions => { :bucket_id => @bucket.id }, :order => "created_at DESC")
   end
   
   def new
@@ -18,7 +19,7 @@ class BucketsController < ApplicationController
   def create
     @bucket = Bucket.new(params[:bucket])
     @bucket.owner = current_user
-    @bucket.account = @current_account
+    @bucket.account = current_account
     if @bucket.save
       flash[:notice] = "Your new category has been created."
       redirect_to @bucket
@@ -28,7 +29,7 @@ class BucketsController < ApplicationController
   end
   
   def join
-    @bucket = Bucket.find(params[:id])
+    @bucket = current_account.buckets.find(params[:id])
     unless current_user.member_of?(@bucket)
       permission = BucketPermission.new
       permission.user = current_user

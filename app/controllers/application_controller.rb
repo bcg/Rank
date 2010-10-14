@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user_session, :current_user, :logged_in?
+  helper_method :current_user_session, :current_user, :logged_in?, :current_account
   before_filter :load_account
   before_filter :load_site_configuration
 
@@ -34,6 +34,10 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.record
   end
   
+  def current_account
+    return @current_account if defined?(@current_account)
+  end
+  
   def logged_in?
     current_user != nil
   end
@@ -44,6 +48,12 @@ class ApplicationController < ActionController::Base
       flash[:notice] = "You must be logged in to access this page"
       redirect_to login_url
       return false
+    end
+  end
+  
+  def login_required_if_private
+    if @site_configuration.private_site
+      login_required
     end
   end
   
