@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101014160457) do
+ActiveRecord::Schema.define(:version => 20101018041146) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(:version => 20101014160457) do
     t.integer  "account_id"
   end
 
+  create_table "roles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -84,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20101014160457) do
     t.integer  "default_bucket_id"
     t.integer  "account_id"
     t.string   "alternate_rss_url"
+    t.boolean  "use_disqus",        :default => false
+    t.string   "disqus_identifier"
   end
 
   create_table "users", :force => true do |t|

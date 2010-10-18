@@ -19,6 +19,7 @@ gem 'ruby-debug'
 # Bundle the extra gems:
 gem 'haml', '3.0.21'
 gem 'authlogic', '2.1.6'
+gem 'cancan', '1.4.0'
 gem 'jquery-rails', '0.2.1'
 # gem 'bj'
 # gem 'nokogiri'

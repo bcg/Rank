@@ -33,6 +33,7 @@ GEM
     authlogic (2.1.6)
       activesupport
     builder (2.1.2)
+    cancan (1.4.0)
     capybara (0.3.9)
       culerity (>= 0.2.4)
       mime-types (>= 1.16)
@@ -133,6 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic (= 2.1.6)
+  cancan (= 1.4.0)
   capybara
   cucumber (= 0.9.2)
   cucumber-rails
