@@ -29,12 +29,12 @@ gem 'jquery-rails', '0.2.1'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :test, :cucumber do
+group :test do
   gem 'faker'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber', '0.9.2'
   gem 'rspec-rails', '>= 2.0.0'
   gem 'factory_girl_rails'
+  gem 'email_spec'
 end
+
