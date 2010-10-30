@@ -1,4 +1,4 @@
-namespace :orgg3 do
+namespace :rank do
   desc "Recalculate all the scores for posts and votes"
   task :recalculate_scores => :environment do
     Post.all do |post|

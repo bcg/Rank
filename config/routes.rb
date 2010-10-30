@@ -1,4 +1,4 @@
-Orgg3::Application.routes.draw do
+Rank::Application.routes.draw do
 
   # resource :site_configuration
   resource :bookmarklet, :controller => "bookmarklet" do

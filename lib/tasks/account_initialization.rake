@@ -1,4 +1,4 @@
-namespace :orgg3 do
+namespace :rank do
   desc "One time task because first site was not multi-tenant"
   task :multitenantize => :environment do
     account = Account.new

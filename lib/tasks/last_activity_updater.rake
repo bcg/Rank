@@ -1,4 +1,4 @@
-namespace :orgg3 do
+namespace :rank do
   desc "Update last activity at"
   task :last_activity_update => :environment do
     logger = Rails.logger

@@ -2,7 +2,7 @@
   %div.login-form
     %h1 Log in
 
-    = form_for :user_session, @user_session, :url => authenticate_url do |f|
+    = form_for @user_session, :as => :user_session, :url => authenticate_url do |f|
       = f.error_messages
       %fieldset
         %div.field
